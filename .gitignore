@@ -1,0 +1,10 @@
+nbproject
+/vendor
+.DS_Store
+/yii
+/.vagrant
+/.php_cs.cache
+/yii-test
+/docker-compose.override.yml
+/.idea
+/web
