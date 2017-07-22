@@ -1,0 +1,14 @@
+/*BASE - Base styles, variables, mixins, etc*/
+@import "base/_variables.scss";
+@import "base/_text.scss";
+@import "base/_mixins.scss";
+@import "base/_normalize.scss";
+@import "base/_hightext.scss";
+/*LAYOUTS - Page layout styles*/
+@import 'layouts/_nav.scss';
+@import 'layouts/_footer.scss';
+@import 'layouts/_mobile.scss';
+/*Модули (каруселька, табы и тд)*/
+@import "models/_components.scss";
+@import "models/_blocks.scss";
+@import "models/_img.scss";

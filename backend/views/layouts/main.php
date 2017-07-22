@@ -37,6 +37,11 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => 'Home', 'url' => ['/site/index']],
+        ['label' => 'Животные', 'url' => ['/animals/index']],
+        ['label' => 'Владельцы', 'url' => ['/keepers/index']],
+        ['label' => 'Врачи', 'url' => ['/doctors/index']],
+        ['label' => 'Бланки', 'url' => ['/analysis-blank/index']],
+        ['label' => 'Нормы', 'url' => ['/analysis-standarts/index']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];

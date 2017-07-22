@@ -1,0 +1,11 @@
+/*Footer*/
+.footer-main{
+    @include add-background($dark-color);
+    @include add-border(5px, $secondary-color, top);
+    padding: 30px 15px 10px 15px;
+    z-index:100;
+    text-align: left;
+    a{
+        color: #ffffff;
+    }
+}

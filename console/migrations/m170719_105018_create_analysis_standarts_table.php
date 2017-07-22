@@ -24,7 +24,7 @@ class m170719_105018_create_analysis_standarts_table extends Migration
             'calcium_min' => $this->double()->notNull(),
             'total_protein_min' => $this->double()->notNull(),
             'total_bilirubin_min' => $this->double()->notNull(),
-            'alkaline phosphatase_min' => $this->double()->notNull(),
+            'alkaline_phosphatase_min' => $this->double()->notNull(),
             'phosphorus_min' => $this->double()->notNull(),
             'glucose_max' => $this->double()->notNull(),
             'creatinine_max' => $this->double()->notNull(),
@@ -35,7 +35,7 @@ class m170719_105018_create_analysis_standarts_table extends Migration
             'calcium_max' => $this->double()->notNull(),
             'total_protein_max' => $this->double()->notNull(),
             'total_bilirubin_max' => $this->double()->notNull(),
-            'alkaline phosphatase_max' => $this->double()->notNull(),
+            'alkaline_phosphatase_max' => $this->double()->notNull(),
             'phosphorus_max' => $this->double()->notNull(),
         ]);
 

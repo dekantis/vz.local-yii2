@@ -23,7 +23,7 @@ class m170719_100854_create_keepers_table extends Migration
         $this->createTable('animals_keepers', [
             'id' => $this->primaryKey(),
             'animal_id' => $this->integer()->notNull(),
-            'keeper_id' => $this->integer()->notNull(),
+            'keeper' => $this->integer()->notNull(),
         ]);
 
         $this->addForeignKey(
@@ -39,7 +39,7 @@ class m170719_100854_create_keepers_table extends Migration
         $this->addForeignKey(
             'animals_keepers-keeper',
             'animals_keepers',
-            'keeper_id',
+            'keeper',
             'keepers',
             'id',
             'CASCADE',

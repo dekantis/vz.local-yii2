@@ -7,9 +7,7 @@ use yii\db\Migration;
  */
 class m170719_094204_create_doctors_table extends Migration
 {
-    /**
-     * @inheritdoc
-     */
+
     public function up()
     {
         $this->createTable('doctors', [
@@ -17,8 +15,8 @@ class m170719_094204_create_doctors_table extends Migration
             'name' => $this->string(255)->notNull(),
             'lastname' => $this->string(255)->notNull(),
             'patronymic' => $this->string(255)->notNull(),
-            'speciaisation_id' => $this->integer()->notNull(),
-            'avatar_id' => $this->integer()->notNull(),
+            'specialisation_id' => $this->integer()->notNull(),
+            'avatar_id' => $this->integer(),
         ]);
 
         $this->addForeignKey(

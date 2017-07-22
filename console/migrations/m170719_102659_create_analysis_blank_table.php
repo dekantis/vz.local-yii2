@@ -15,7 +15,7 @@ class m170719_102659_create_analysis_blank_table extends Migration
         $this->createTable('analysis_blank', [
             'id' => $this->primaryKey(),
             'animal_id' => $this->integer()->notNull(),
-            'keeper_id' => $this->integer()->notNull(),
+            'keeper' => $this->string(255)->notNull(),
             'doctor_id' => $this->integer()->notNull(),
             'glucose' => $this->double(),
             'creatinine' => $this->double(),
@@ -26,9 +26,9 @@ class m170719_102659_create_analysis_blank_table extends Migration
             'calcium' => $this->double(),
             'total_protein' => $this->double(),
             'total_bilirubin' => $this->double(),
-            'alkaline phosphatase' => $this->double(),
+            'alkaline_phosphatase' => $this->double(),
             'phosphorus' => $this->double(),
-            'date_publication' => $this->date()->notNull(),
+            'date_publication' => $this->integer()->notNull(),
             'medical_mark' =>$this->text(),
         ]);
 
@@ -42,15 +42,6 @@ class m170719_102659_create_analysis_blank_table extends Migration
             'CASCADE'
         );
 
-        $this->addForeignKey(
-            'analysis_blank-keeper',
-            'analysis_blank',
-            'keeper_id',
-            'keepers',
-            'id',
-            'CASCADE',
-            'CASCADE'
-        );
         $this->addForeignKey(
             'analysis_blank-doctor',
             'analysis_blank',

@@ -34,6 +34,7 @@ $web = [
     'web/index.php' => 'frontend/web/index.php',
     'web/favicon.ico' => 'frontend/web/favicon.ico',
     'web/assets' => 'frontend/web/assets',
+    'web/img' => 'frontend/web/img',
     // backend
     'web/admin/index.php' => 'backend/web/index.php',
     'web/admin/favicon.ico' => 'backend/web/favicon.ico',
