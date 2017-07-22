@@ -1,8 +1,14 @@
 /*Blocks*/
 .recomendation-block {
-    background: url(../img/sob.jpg) no-repeat center center;
-    width: 135px;
-    height: 135px;
+    justify-content: center; /*центрируем элемент по горизонтали */
+    align-items: center; /* и вертикали */
+    width: 300px; /* задали размеры блоку-родителю */
+    height: 200px;
+    overflow: hidden; /* если элемент больше блока-родителя – обрезаем лишнее */
+    padding: 30px 15px 10px 15px;
+    z-index:100;
+    text-align: left;
+    margin: auto;
 }
 .block{
     padding:15px;
@@ -72,4 +78,7 @@
 /*Фиксациая слева*/
 .fixed{
     position:fixed;
+}
+.block-vk{
+    margin: 5%;
 }
