@@ -81,4 +81,11 @@ class Doctor extends \yii\db\ActiveRecord
     {
         return $this->hasOne(FileStorage::className(), ['id' => 'avatar_id']);
     }
+
+    public function getFullname()
+    {
+        return  $this->lastname
+        . ' ' . $this->name
+        . ' ' . $this->patronymic;
+    }
 }

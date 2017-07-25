@@ -18,7 +18,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'keeper')->textInput() ?>
 
-    <?= $form->field($model, 'doctor_id')->textInput() ?>
+    <?= $form->field($model, 'doctor_id')->dropDownList($doctorList, [
+        'prompt' => 'Выберите доктора'
+        ]) ?>
 
     <?= $form->field($model, 'glucose')->textInput() ?>
 

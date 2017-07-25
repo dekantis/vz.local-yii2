@@ -23,10 +23,11 @@ AppAsset::register($this);
     </header>
     <div class="container main">
         <?= $content ?>
-    </div>
+
     <footer class="footer-main">
         <?= $this->render('_footer') ?>
     </footer>
+    </div>
 <?php $this->endBody() ?>
 </body>
 </html>

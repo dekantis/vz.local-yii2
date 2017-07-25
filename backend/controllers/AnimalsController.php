@@ -5,6 +5,7 @@ namespace backend\controllers;
 use Yii;
 use common\models\Animal;
 use backend\models\AnimalSearch;
+use backend\controllers\AdminController;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -12,21 +13,23 @@ use yii\filters\VerbFilter;
 /**
  * AnimalsController implements the CRUD actions for Animal model.
  */
-class AnimalsController extends Controller
+class AnimalsController extends AdminController
 {
     /**
      * @inheritdoc
      */
     public function behaviors()
     {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
+          $parentBehaviors = parent::behaviors();
+          $currentBehaviors = [
+              'verbs' => [
+                  'class' => VerbFilter::className(),
+                  'actions' => [
+                      'delete' => ['POST'],
+                  ],
+              ],
+          ];
+          return array_merge($parentBehaviors, $currentBehaviors);
     }
 
     /**
@@ -120,5 +123,15 @@ class AnimalsController extends Controller
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+    public function accessRules()
+    {
+        return [
+            [
+                'allow' => true,
+                'actions' => ['create', 'update', 'index', 'view', 'delete'],
+                'roles' => ['@'],
+            ]
+        ];
     }
 }

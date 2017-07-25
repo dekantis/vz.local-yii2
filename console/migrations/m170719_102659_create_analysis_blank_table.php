@@ -59,7 +59,6 @@ class m170719_102659_create_analysis_blank_table extends Migration
     public function down()
     {
         $this->dropForeignKey('analysis_blank-animal', 'analysis_blank');
-        $this->dropForeignKey('analysis_blank-keeper', 'analysis_blank');
         $this->dropForeignKey('analysis_blank-doctor', 'analysis_blank');
         $this->dropTable('analysis_blank');
     }

@@ -7,12 +7,12 @@
   background-repeat: no-repeat;
 }
 .carousel .carousel-inner .item-1 {
-  background-image: url(/img/2.jpg);
+  background-image: url(/img/price.jpg);
   padding: 3px;
   @include add-border(3px,#cccccc,all);
 }
 .carousel .carousel-inner .item-2 {
-  background-image: url(/img/sob.jpg);
+  background-image: url(/img/map.png);
   padding: 3px;
   @include add-border(3px,#cccccc,all);
 }

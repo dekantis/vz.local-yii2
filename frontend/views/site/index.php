@@ -1,3 +1,6 @@
+<?php
+$this->title = 'Главная';
+?>
 <div class="row">
     <div class="text-center">
         <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
@@ -12,25 +15,26 @@
                 <div class="item item-1 active">
                     <!-- <img src="images/slide1.png" alt="First Slide"> -->
                     <div class="carousel-caption">
-                        <h3 class="lead text-primary">Интересная новость</h3>
-                        <p>Краткое описание новости</p>
-                        <a href="#" class="btn btn-success btn-advanced">Подробнее</a>
+                        <h3 class="lead text-primary">Прайс лист</h3>
+                        <p>Стоимость услуг в наших лечебницах </p>
+                        <a href="site/price" class="btn btn-success btn-advanced">Подробнее</a>
                     </div>
                 </div>
                 <div class="item item-2">
                     <!-- <img src="images/slide2.png" alt="Second Slide"> -->
                     <div class="carousel-caption">
-                        <h3 class="lead text-primary">Интересная новость</h3>
-                        <p>Краткое описание новости</p>
-                        <a href="#" class="btn btn-success btn-advanced">Подробнее</a>
+                        <h3 class="lead text-primary">Наши контанкты</h3>
+                        <p>Где и как нас найти?</p>
+                        <a href="site/contact" class="btn btn-success btn-advanced">Подробнее</a>
                     </div>
                 </div>
                 <div class="item item-3">
                     <!-- <img src="images/slide3.png" alt="Third Slide"> -->
                     <div class="carousel-caption">
-                        <h3  class="lead text-primary">Интересная новость</h3>
-                        <p>Краткое описание новости</p>
-                        <a href="#" class="btn btn-success btn-advanced">Подробнее</a>
+                        <h3  class="lead text-primary">Анализы крови</h3>
+                        <p>Знайте больше о состоянии вашего любимца
+                        </p>
+                        <a href="/analysis/" class="btn btn-success btn-advanced">Подробнее</a>
                     </div>
                 </div>
             </div>
@@ -61,12 +65,13 @@
     </div>
     <div class="col-md-8 col-lg-8">
         <p class="lead"><h2 class="text-center"><strong>Здравствуйте!</strong></h2></p>
-        <p class="text-indent text-justify lead">Здесь помогают тем, кто тысячи лет верно служит человеку, разделяя с ним очаг и кров. Тем, кто преданно смотрит Вам в глаза в минуты печали и неутолимо резвится в дни радости. Здесь лечат животных!
+        <p class="text-indent text-justify lead">
+            Здесь помогают тем, кто тысячи лет верно служит человеку, разделяя с ним очаг и кров.
+            Тем, кто преданно смотрит Вам в глаза в минуты печали и неутолимо резвится в дни радости. Здесь лечат животных!
         </p>
     </div>
 </div>
 <div class="row">
-
     <div class="lead text-justify text-indent">
         <p>Вы и только Вы – самые лучшие, самые добрые и самые умные. А мы, ветеринарные врачи, знаем о болезнях животных чуть больше лишь только потому, что обучались этой профессии и ежедневно сталкиваемся с подобными проблемами у братьев наших меньших. Мы, Ваши
             ветеринарные врачи, с радостью применяем знания, навыки и опыт в лечении маленьких друзей. Лечить животных – наша работа, любимая работа. Под сводами нашей лечебницы найдут помощь не только кошки и собаки, но и друзья гораздо
@@ -79,17 +84,17 @@
         </p>
         <small class="pull-right lead"><cite>Ваш Ветеринарный Врач.</cite></small>
     </div>
-    <div class="row">
-        <div class="col-md-8 text-center">
-            <div class="recomendation">
-                  <h2 class="heading">Рекомендации. <span class="text-muted">Важные для ВАС</span></h2>
-                  <p class="lead text-justify">Тут очень важные рекомндации для вас</p>
-            </div>
-        </div>
-        <div class="col-md-4 col-lg-4">
-            <div class="recomendation-block">
-                <img class="img-responsive" alt="Какое-то название" src="/img/2.jpg">
-             </div>
-        </div>
-    </div>
 </div>
+<!--<div class="row">
+    <div class="lead">
+         <h2 class="heading">Рекомендации. <span class="text-muted">Важные для ВАС</span></h2>
+    </div>
+    <div class="col-md-8">
+      <p class="lead text-justify text-indent">Тут очень важные рекомндации для вас</p>
+    </div>
+    <div class="col-md-4 col-lg-4">
+        <div class="recomendation-block">
+            <img class="img-responsive" alt="Какое-то название" src="/img/2.jpg">
+         </div>
+    </div>
+</div>-->

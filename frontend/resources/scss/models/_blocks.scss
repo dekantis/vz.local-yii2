@@ -2,7 +2,7 @@
 .recomendation-block {
     justify-content: center; /*центрируем элемент по горизонтали */
     align-items: center; /* и вертикали */
-    width: 300px; /* задали размеры блоку-родителю */
+    width: 350px; /* задали размеры блоку-родителю */
     height: 200px;
     overflow: hidden; /* если элемент больше блока-родителя – обрезаем лишнее */
     padding: 30px 15px 10px 15px;
@@ -80,5 +80,9 @@
     position:fixed;
 }
 .block-vk{
-    margin: 5%;
+    margin-top: 3%;
+}
+
+.tr-click:hover {
+    cursor:pointer;
 }

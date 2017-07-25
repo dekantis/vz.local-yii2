@@ -5,6 +5,8 @@ namespace frontend\controllers;
 use yii\web\Controller;
 use yii\data\ActiveDataProvider;
 use common\models\AnalysisBlank;
+use common\models\AnalysisStandart;
+use yii\web\NotFoundHttpException;
 
 class AnalysisController extends Controller
 {
@@ -23,7 +25,8 @@ class AnalysisController extends Controller
             ->orderBy('date_publication', SORT_DESC);
 
         $dataProvider = new ActiveDataProvider([
-            'query' => $query
+            'query' => $query,
+            'sort' => false
         ]);
 
         return $this->render('index', [
@@ -31,17 +34,25 @@ class AnalysisController extends Controller
         ]);
     }
 
-    public function actionView()
+    public function actionView($id)
     {
-        $query = AnalysisBlank::find()
-            ->orderBy('date_publication', SORT_DESC);
+        $blank = $this->findModel($id);
 
-        $dataProvider = new ActiveDataProvider([
-            'query' => $query
-        ]);
+        $standart = AnalysisStandart::find()
+            ->where(['animal_id' => $blank->animal->category_id])
+            ->one();
 
         return $this->render('view', [
-            'dataProvider' => $dataProvider
+            'blank' => $blank,
+            'standart' => $standart
         ]);
+    }
+    protected function findModel($id)
+    {
+        if (($model = AnalysisBlank::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
     }
 }

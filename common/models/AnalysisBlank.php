@@ -32,6 +32,7 @@ use yii\behaviors\TimestampBehavior;
  */
 class AnalysisBlank extends \yii\db\ActiveRecord
 {
+
     public function behaviors()
     {
         return [
@@ -73,22 +74,23 @@ class AnalysisBlank extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'animal_id' => 'Animal ID',
-            'keeper' => 'Keeper',
-            'doctor_id' => 'Doctor ID',
-            'glucose' => 'Glucose',
-            'creatinine' => 'Creatinine',
-            'alt' => 'Alt',
-            'ast' => 'Ast',
-            'urea' => 'Urea',
-            'lamilaza' => 'Lamilaza',
-            'calcium' => 'Calcium',
-            'total_protein' => 'Total Protein',
-            'total_bilirubin' => 'Total Bilirubin',
-            'alkaline_phosphatase' => 'alkaline_phosphatase',
-            'phosphorus' => 'Phosphorus',
-            'date_publication' => 'Date Publication',
-            'medical_mark' => 'Medical Mark',
+            'animal_id' => 'Животное',
+            'category' => 'Вид животного',
+            'keeper' => 'Владелец',
+            'doctor_id' => 'Доктор',
+            'glucose' => 'Глюкоза',
+            'creatinine' => 'Креатинин',
+            'alt' => 'АЛТ',
+            'ast' => 'АСТ',
+            'urea' => 'Мочевина',
+            'lamilaza' => 'Альфа Амилаза',
+            'calcium' => 'Сальций',
+            'total_protein' => 'Общий белок',
+            'total_bilirubin' => 'Общий билерубин',
+            'alkaline_phosphatase' => 'Щелочная фосфатаза',
+            'phosphorus' => 'Фосфор',
+            'date_publication' => 'Дата публикации',
+            'medical_mark' => 'Врачебная пометка',
         ];
     }
 
@@ -107,8 +109,4 @@ class AnalysisBlank extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Animal::className(), ['id' => 'animal_id']);
     }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
 }

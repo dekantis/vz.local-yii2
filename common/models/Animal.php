@@ -4,24 +4,12 @@ namespace common\models;
 
 use Yii;
 
-/**
- * This is the model class for table "animals".
- *
- * @property integer $id
- * @property string $name
- * @property integer $year
- * @property integer $category_id
- *
- * @property AnalysisBlank[] $analysisBlanks
- * @property AnalysisStandarts[] $analysisStandarts
- * @property AnimalsKeepers[] $animalsKeepers
- */
 class Animal extends \yii\db\ActiveRecord
 {
     const TYPE_CAT = 10;
     const TYPE_DOG = 20;
 
-    public function getTypeList()
+    public static function getTypeList()
     {
         return [
             self::TYPE_CAT => 'Кошка',
@@ -34,9 +22,6 @@ class Animal extends \yii\db\ActiveRecord
         return 'animals';
     }
 
-    /**
-     * @inheritdoc
-     */
     public function rules()
     {
         return [
@@ -46,9 +31,6 @@ class Animal extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
     public function attributeLabels()
     {
         return [
@@ -59,27 +41,23 @@ class Animal extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
     public function getAnalysisBlanks()
     {
         return $this->hasMany(AnalysisBlank::className(), ['animal_id' => 'id']);
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
     public function getAnalysisStandarts()
     {
         return $this->hasMany(AnalysisStandarts::className(), ['animal_id' => 'id']);
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
     public function getAnimalsKeepers()
     {
         return $this->hasMany(AnimalsKeepers::className(), ['animal_id' => 'id']);
+    }
+
+    public function getCategory()
+    {
+        return $this->typeList[$this->category_id];
     }
 }

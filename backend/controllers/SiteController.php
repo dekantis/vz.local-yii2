@@ -6,39 +6,28 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
+use backend\controllers\AdminController;
 
 /**
  * Site controller
  */
-class SiteController extends Controller
+class SiteController extends AdminController
 {
     /**
      * @inheritdoc
      */
     public function behaviors()
     {
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'rules' => [
-                    [
-                        'actions' => ['login', 'error'],
-                        'allow' => true,
-                    ],
-                    [
-                        'actions' => ['logout', 'index'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
-                ],
-            ],
-        ];
+              $parentBehaviors = parent::behaviors();
+              $currentBehaviors = [
+                  'verbs' => [
+                      'class' => VerbFilter::className(),
+                      'actions' => [
+                          'delete' => ['POST'],
+                      ],
+                  ],
+              ];
+              return array_merge($parentBehaviors, $currentBehaviors);
     }
 
     /**
@@ -94,5 +83,19 @@ class SiteController extends Controller
         Yii::$app->user->logout();
 
         return $this->goHome();
+    }
+    public function accessRules()
+    {
+        return [
+            [
+                'allow' => true,
+                'actions' => ['logout', 'index',],
+                'roles' => ['@'],
+            ],
+            [
+                'allow' => true,
+                'actions' => ['login', 'error'],
+            ]
+        ];
     }
 }

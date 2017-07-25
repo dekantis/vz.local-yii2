@@ -5,23 +5,25 @@ namespace backend\controllers;
 use Yii;
 use common\models\AnalysisBlank;
 use backend\models\AnalysisBlankSearch;
-use yii\web\Controller;
+use backend\controllers\AdminController;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
 use common\models\Animal;
+use common\models\Doctor;
 
 /**
  * AnalysisBlankController implements the CRUD actions for AnalysisBlank model.
  */
-class AnalysisBlankController extends Controller
+class AnalysisBlankController extends AdminController
 {
     /**
      * @inheritdoc
      */
     public function behaviors()
     {
-        return [
+        $parentBehaviors = parent::behaviors();
+        $currentBehaviors = [
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -29,6 +31,7 @@ class AnalysisBlankController extends Controller
                 ],
             ],
         ];
+        return array_merge($parentBehaviors, $currentBehaviors);
     }
 
     /**
@@ -40,7 +43,7 @@ class AnalysisBlankController extends Controller
         $searchModel = new AnalysisBlankSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         return $this->render('index', [
-                        'searchModel' => $searchModel,
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -53,7 +56,7 @@ class AnalysisBlankController extends Controller
     public function actionView($id)
     {
         return $this->render('view', [
-        'model' => $this->findModel($id),
+            'model' => $this->findModel($id),
         ]);
     }
 
@@ -66,7 +69,10 @@ class AnalysisBlankController extends Controller
     {
         $model = new AnalysisBlank();
         $animals = Animal::find()->all();
+        $doctors = Doctor::find()->all();
         $animalList = ArrayHelper::map($animals, 'id', 'name');
+
+        $doctorList = ArrayHelper::map($doctors, 'id', 'fullName');
 
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -74,7 +80,8 @@ class AnalysisBlankController extends Controller
         } else {
             return $this->render('create', [
                 'model' => $model,
-                'animalList' => $animalList
+                'animalList' => $animalList,
+                'doctorList' => $doctorList
             ]);
         }
     }
@@ -89,14 +96,17 @@ class AnalysisBlankController extends Controller
     {
         $model = $this->findModel($id);
         $animals = Animal::find()->all();
+        $doctors = Doctor::find()->all();
         $animalList = ArrayHelper::map($animals, 'id', 'name');
+        $doctorList = ArrayHelper::map($doctors, 'id', 'fullName');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
-                'animalList' => $animalList
+                'animalList' => $animalList,
+                'doctorList' => $doctorList
             ]);
         }
     }
@@ -128,5 +138,16 @@ class AnalysisBlankController extends Controller
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+
+    public function accessRules()
+    {
+        return [
+            [
+                'allow' => true,
+                'actions' => ['create', 'update', 'index', 'view', 'delete'],
+                'roles' => ['@'],
+            ]
+        ];
     }
 }

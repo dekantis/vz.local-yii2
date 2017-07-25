@@ -40,6 +40,9 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'contacts' => 'site/contact',
+                'doctors' => 'site/doctors',
+                'analysis' => 'analysis/index'
             ],
         ],
         'assetManager' => [

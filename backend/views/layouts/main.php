@@ -29,19 +29,43 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'My Company',
-        'brandUrl' => Yii::$app->homeUrl,
+        'brandLabel' => 'Главная',
+        'brandUrl' => ['/../site/'],
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'Животные', 'url' => ['/animals/index']],
-        ['label' => 'Владельцы', 'url' => ['/keepers/index']],
-        ['label' => 'Врачи', 'url' => ['/doctors/index']],
-        ['label' => 'Бланки', 'url' => ['/analysis-blank/index']],
-        ['label' => 'Нормы', 'url' => ['/analysis-standarts/index']],
+        [
+            'label' => 'На сайт',
+            'url' => ['/../site/'],
+            'visible' => !Yii::$app->user->isGuest
+        ],
+        [
+            'label' => 'Животные',
+            'url' => ['/animals/index'],
+            'visible' => !Yii::$app->user->isGuest
+        ],
+        [
+            'label' => 'Владельцы',
+            'url' => ['/keepers/index'],
+            'visible' => !Yii::$app->user->isGuest
+        ],
+        [
+            'label' => 'Врачи',
+            'url' => ['/doctors/index'],
+            'visible' => !Yii::$app->user->isGuest
+        ],
+        [
+            'label' => 'Бланки',
+            'url' => ['/analysis-blank/index'],
+            'visible' => !Yii::$app->user->isGuest
+        ],
+        [
+            'label' => 'Нормы',
+            'url' => ['/analysis-standarts/index'],
+            'visible' => !Yii::$app->user->isGuest
+        ],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];

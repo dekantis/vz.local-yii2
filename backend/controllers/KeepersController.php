@@ -5,6 +5,7 @@ namespace backend\controllers;
 use Yii;
 use common\models\Keeper;
 use backend\models\KeeperSearch;
+use backend\controllers\AdminController;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -12,21 +13,23 @@ use yii\filters\VerbFilter;
 /**
  * KeepersController implements the CRUD actions for Keeper model.
  */
-class KeepersController extends Controller
+class KeepersController extends AdminController
 {
     /**
      * @inheritdoc
      */
     public function behaviors()
     {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
+             $parentBehaviors = parent::behaviors();
+             $currentBehaviors = [
+                 'verbs' => [
+                     'class' => VerbFilter::className(),
+                     'actions' => [
+                         'delete' => ['POST'],
+                     ],
+                 ],
+             ];
+             return array_merge($parentBehaviors, $currentBehaviors);
     }
 
     /**
@@ -120,5 +123,15 @@ class KeepersController extends Controller
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+    public function accessRules()
+    {
+        return [
+            [
+                'allow' => true,
+                'actions' => ['create', 'update', 'index', 'view', 'delete'],
+                'roles' => ['@'],
+            ]
+        ];
     }
 }
