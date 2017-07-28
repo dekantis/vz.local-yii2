@@ -33,7 +33,7 @@ $this->title = 'Врачи';
 </div>
 </div>
 <div class="text-center">
-    <div class="page-header heading-secondary-a"> <h1>Вызов врача на дом</h1></div>
+    <div class="page-header heading-secondary-a"> <h1>Вызов доктора на дом</h1></div>
     <div class="lead text-indent text-justify">
         <p>Вопрос о том, требуется ли животному срочная ветеринарная помощь на дому, может быть затруднительным для вас.
             Для начала проконсультируйтесь по телефону вызывать ли ветеринарного врача на дом или привезти питомца в ветклинику.
