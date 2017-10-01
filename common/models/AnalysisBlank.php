@@ -86,7 +86,7 @@ class AnalysisBlank extends \yii\db\ActiveRecord
             'lamilaza' => 'Альфа Амилаза',
             'calcium' => 'Сальций',
             'total_protein' => 'Общий белок',
-            'total_bilirubin' => 'Общий билерубин',
+            'total_bilirubin' => 'Общий билирубин',
             'alkaline_phosphatase' => 'Щелочная фосфатаза',
             'phosphorus' => 'Фосфор',
             'date_publication' => 'Дата публикации',

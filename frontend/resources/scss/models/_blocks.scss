@@ -10,6 +10,9 @@
     text-align: left;
     margin: auto;
 }
+.block-contact {
+     @include add-border(3px,#cccccc,all);
+}
 .block{
     padding:15px;
     margin-bottom:15px;

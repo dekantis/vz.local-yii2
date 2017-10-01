@@ -38,16 +38,6 @@ class m170719_105018_create_analysis_standarts_table extends Migration
             'alkaline_phosphatase_max' => $this->double()->notNull(),
             'phosphorus_max' => $this->double()->notNull(),
         ]);
-
-        $this->addForeignKey(
-            'analysis_standarts-animal',
-            'analysis_standarts',
-            'animal_id',
-            'animals',
-            'id',
-            'CASCADE',
-            'CASCADE'
-        );
     }
 
     /**
@@ -55,7 +45,6 @@ class m170719_105018_create_analysis_standarts_table extends Migration
      */
     public function down()
     {
-        $this->dropForeignKey('analysis_standarts-animal', 'analysis_standarts');
         $this->dropTable('analysis_standarts');
     }
 }
