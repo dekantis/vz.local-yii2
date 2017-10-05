@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use common\models\Animal;
+use common\models\AnalysisBlank;
 
 ?>
 
@@ -10,7 +10,7 @@ use common\models\Animal;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'animal_id')->dropDownList(Animal::getTypeList(), [
+    <?= $form->field($model, 'category_id')->dropDownList(AnalysisBlank::getTypeList(), [
             'prompt' => 'Выберите тип животного'
         ]) ?>
         <div class="row">

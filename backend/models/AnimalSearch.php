@@ -18,7 +18,7 @@ class AnimalSearch extends Animal
     public function rules()
     {
         return [
-            [['id', 'year', 'category_id'], 'integer'],
+            [['id', 'year'], 'integer'],
             [['name'], 'safe'],
         ];
     }
@@ -61,7 +61,6 @@ class AnimalSearch extends Animal
         $query->andFilterWhere([
             'id' => $this->id,
             'year' => $this->year,
-            'category_id' => $this->category_id,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name]);

@@ -22,10 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
             // ['class' => 'yii\grid\SerialColumn'],
 
             // 'id',
-            [
-            'attribute' => 'animal_id',
-             'value' => 'animal.name',
-            ],
+            'animal_name',
             'keeper',
             [
             'attribute' => 'doctor_id',

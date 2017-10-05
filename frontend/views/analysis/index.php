@@ -14,9 +14,9 @@ $this->title = 'Анализы'
     },
     'columns' => [
         ['class' => 'yii\grid\SerialColumn'],
-        'animal.name',
+        'animal_name',
         [
-            'attribute' => 'animal.category',
+            'attribute' => 'category',
             'label' => 'Вид живтоного'
         ],
         'keeper',

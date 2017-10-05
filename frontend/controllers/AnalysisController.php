@@ -39,7 +39,7 @@ class AnalysisController extends Controller
         $blank = $this->findModel($id);
 
         $standart = AnalysisStandart::find()
-            ->where(['animal_id' => $blank->animal->category_id])
+            ->where(['category_id' => $blank->category_id])
             ->one();
 
         return $this->render('view', [

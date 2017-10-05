@@ -18,9 +18,9 @@ class AnalysisBlankSearch extends AnalysisBlank
     public function rules()
     {
         return [
-            [['id', 'animal_id', 'doctor_id'], 'integer'],
+            [['id', 'doctor_id', 'category_id'], 'integer'],
             [['glucose', 'creatinine', 'alt', 'ast', 'urea', 'lamilaza', 'calcium', 'total_protein', 'total_bilirubin', 'alkaline_phosphatase', 'phosphorus'], 'number'],
-            [['date_publication', 'medical_mark', 'keeper'], 'safe'],
+            [['date_publication', 'medical_mark', 'keeper', 'animal_name'], 'safe'],
         ];
     }
 
@@ -61,7 +61,8 @@ class AnalysisBlankSearch extends AnalysisBlank
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'animal_id' => $this->animal_id,
+            'category_id' => $this->category_id,
+            'animal' => $this->animal,
             'keeper' => $this->keeper,
             'doctor_id' => $this->doctor_id,
             'glucose' => $this->glucose,

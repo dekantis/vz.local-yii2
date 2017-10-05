@@ -9,7 +9,7 @@ use yii\behaviors\TimestampBehavior;
  * This is the model class for table "analysis_blank".
  *
  * @property integer $id
- * @property integer $animal_id
+ * @property integer $animal_name
  * @property integer $keeper
  * @property integer $doctor_id
  * @property double $glucose
@@ -27,11 +27,22 @@ use yii\behaviors\TimestampBehavior;
  * @property string $medical_mark
  *
  * @property Doctors $doctor
- * @property Animals $animal
- * @property Keepers $keeper
  */
 class AnalysisBlank extends \yii\db\ActiveRecord
 {
+
+    const TYPE_CAT = 10;
+    const TYPE_DOG = 20;
+    const TYPE_RABIT = 30;
+
+    public static function getTypeList()
+    {
+        return [
+            self::TYPE_CAT => 'Кошка',
+            self::TYPE_DOG => 'Собака',
+            self::TYPE_RABIT => 'Кролик'
+        ];
+    }
 
     public function behaviors()
     {
@@ -57,13 +68,12 @@ class AnalysisBlank extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['animal_id', 'keeper', 'doctor_id'], 'required'],
-            [['animal_id', 'doctor_id'], 'integer'],
+            [['animal_name', 'keeper', 'doctor_id', 'category_id'], 'required'],
+            [['doctor_id', 'category_id'], 'integer'],
             [['glucose', 'creatinine', 'alt', 'ast', 'urea', 'lamilaza', 'calcium', 'total_protein', 'total_bilirubin', 'alkaline_phosphatase', 'phosphorus'], 'number'],
             [['date_publication'], 'safe'],
-            [['medical_mark', 'keeper'], 'string'],
+            [['animal_name', 'medical_mark', 'keeper'], 'string'],
             [['doctor_id'], 'exist', 'skipOnError' => true, 'targetClass' => Doctor::className(), 'targetAttribute' => ['doctor_id' => 'id']],
-            [['animal_id'], 'exist', 'skipOnError' => true, 'targetClass' => Animal::className(), 'targetAttribute' => ['animal_id' => 'id']],
         ];
     }
 
@@ -74,8 +84,8 @@ class AnalysisBlank extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'animal_id' => 'Животное',
-            'category' => 'Вид животного',
+            'animal_name' => 'Кличка животного',
+            'category_id' => 'Вид животного',
             'keeper' => 'Владелец',
             'doctor_id' => 'Доктор',
             'glucose' => 'Глюкоза',
@@ -102,11 +112,17 @@ class AnalysisBlank extends \yii\db\ActiveRecord
         return $this->hasOne(Doctor::className(), ['id' => 'doctor_id']);
     }
 
+    public function getCategory()
+    {
+        return $this->typeList[$this->category_id];
+    }
+
+    public function getAnalysisStandarts()
+    {
+        return $this->hasMany(AnalysisStandarts::className(), ['category_id' => 'id']);
+    }
+
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getAnimal()
-    {
-        return $this->hasOne(Animal::className(), ['id' => 'animal_id']);
-    }
 }

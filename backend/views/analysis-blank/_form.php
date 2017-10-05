@@ -12,15 +12,13 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'animal_id')->dropDownList($animalList, [
-        'prompt' => 'Выберите животное'
-        ]) ?>
+    <?= $form->field($model, 'category_id')->radioList($model->typeList) ?>
+
+    <?= $form->field($model, 'animal_name')->textInput() ?>
 
     <?= $form->field($model, 'keeper')->textInput() ?>
 
-    <?= $form->field($model, 'doctor_id')->dropDownList($doctorList, [
-        'prompt' => 'Выберите доктора'
-        ]) ?>
+    <?= $form->field($model, 'doctor_id')->radioList($doctorList) ?>
 
     <?= $form->field($model, 'glucose')->textInput() ?>
 

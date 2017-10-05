@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'animal_id',
+            'category_id',
             'glucose_min',
             'creatinine_min',
             'alt_min',

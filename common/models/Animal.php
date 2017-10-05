@@ -6,16 +6,6 @@ use Yii;
 
 class Animal extends \yii\db\ActiveRecord
 {
-    const TYPE_CAT = 10;
-    const TYPE_DOG = 20;
-
-    public static function getTypeList()
-    {
-        return [
-            self::TYPE_CAT => 'Кошка',
-            self::TYPE_DOG => 'Собака'
-        ];
-    }
 
     public static function tableName()
     {
@@ -25,8 +15,8 @@ class Animal extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'category_id'], 'required'],
-            [['year', 'category_id'], 'integer'],
+            [['name',], 'required'],
+            [['year',], 'integer'],
             [['name'], 'string', 'max' => 255],
         ];
     }
@@ -43,7 +33,7 @@ class Animal extends \yii\db\ActiveRecord
 
     public function getAnalysisBlanks()
     {
-        return $this->hasMany(AnalysisBlank::className(), ['animal_id' => 'id']);
+        return $this->hasMany(AnalysisBlank::className(), ['animal' => 'id']);
     }
 
     public function getAnalysisStandarts()
@@ -54,10 +44,5 @@ class Animal extends \yii\db\ActiveRecord
     public function getAnimalsKeepers()
     {
         return $this->hasMany(AnimalsKeepers::className(), ['animal_id' => 'id']);
-    }
-
-    public function getCategory()
-    {
-        return $this->typeList[$this->category_id];
     }
 }

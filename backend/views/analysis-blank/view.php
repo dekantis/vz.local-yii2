@@ -25,13 +25,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            // 'id',
             [
-                'attribute' => 'animal_id',
-                'value' => function ($model) {
-                    return $model->animal->name;
-                },
+                'attribute' => 'category',
+                'label' => 'Вид живтоного'
             ],
+            'animal_name',
             'keeper',
             [
             'attribute' => 'doctor_id',

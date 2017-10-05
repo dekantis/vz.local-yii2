@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
-$this->title = $blank->animal->name;
+$this->title = $blank->animal_name;
 $this->params['breadcrumbs'][] = ['label' => 'Бланки анализов', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 
@@ -28,15 +28,10 @@ $attributes = [
     <?= DetailView::widget([
         'model' => $blank,
         'attributes' => [
-            [
-                'attribute' => 'animal_id',
-                'value' => function ($blank) {
-                    return $blank->animal->name;
-                },
-            ],
+            'animal_name',
             'keeper',
             [
-                'attribute' => 'animal.category',
+                'attribute' => 'category',
                 'label' => 'Вид животного'
             ],
             [
@@ -52,16 +47,16 @@ $attributes = [
                 <?= $blank->attributeLabels()[$attribute] ?>
             </div>
             <div class="col-sm-4">
+                <p>
                 <?= $blank->$attribute ?>
-            </div>
-            <div class="col-sm-4">
+
                 <?php
                     $minAttribute = $attribute . '_min';
                     $maxAttribute = $attribute . '_max';
                 ?>
-                <p>
-                    Минимум: <?= $standart->$minAttribute ?>
-                    Максимум: <?= $standart->$maxAttribute ?>
+
+                    ( <?= $standart->$minAttribute ?>
+                    - <?= $standart->$maxAttribute ?> )
                 </p>
             </div>
         </div>

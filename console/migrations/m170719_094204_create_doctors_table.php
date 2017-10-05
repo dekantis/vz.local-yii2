@@ -27,7 +27,6 @@ class m170719_094204_create_doctors_table extends Migration
             'id',
             'CASCADE',
             'CASCADE'
-
         );
     }
 
