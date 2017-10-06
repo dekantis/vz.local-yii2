@@ -42,16 +42,6 @@ AppAsset::register($this);
             'visible' => !Yii::$app->user->isGuest
         ],
         [
-            'label' => 'Животные',
-            'url' => ['/animals/index'],
-            'visible' => !Yii::$app->user->isGuest
-        ],
-        [
-            'label' => 'Владельцы',
-            'url' => ['/keepers/index'],
-            'visible' => !Yii::$app->user->isGuest
-        ],
-        [
             'label' => 'Врачи',
             'url' => ['/doctors/index'],
             'visible' => !Yii::$app->user->isGuest

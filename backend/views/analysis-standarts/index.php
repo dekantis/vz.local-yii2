@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'animal_id',
+            'category_id',
             'glucose_min',
             'creatinine_min',
             'alt_min',

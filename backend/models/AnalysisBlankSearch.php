@@ -62,7 +62,7 @@ class AnalysisBlankSearch extends AnalysisBlank
         $query->andFilterWhere([
             'id' => $this->id,
             'category_id' => $this->category_id,
-            'animal' => $this->animal,
+            'animal_name' => $this->animal_name,
             'keeper' => $this->keeper,
             'doctor_id' => $this->doctor_id,
             'glucose' => $this->glucose,

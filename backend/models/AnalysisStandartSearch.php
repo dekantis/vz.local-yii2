@@ -60,7 +60,7 @@ class AnalysisStandartSearch extends AnalysisStandart
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'cayegory_id' => $this->category_id,
+            'category_id' => $this->category_id,
             'glucose_min' => $this->glucose_min,
             'creatinine_min' => $this->creatinine_min,
             'alt_min' => $this->alt_min,

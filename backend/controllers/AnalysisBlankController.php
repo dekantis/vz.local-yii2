@@ -68,19 +68,14 @@ class AnalysisBlankController extends AdminController
     public function actionCreate()
     {
         $model = new AnalysisBlank();
-        $animals = Animal::find()->all();
         $doctors = Doctor::find()->all();
-        $animalList = ArrayHelper::map($animals, 'id', 'name');
-
         $doctorList = ArrayHelper::map($doctors, 'id', 'fullName');
-
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
-                'animalList' => $animalList,
                 'doctorList' => $doctorList
             ]);
         }
@@ -95,9 +90,7 @@ class AnalysisBlankController extends AdminController
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        $animals = Animal::find()->all();
         $doctors = Doctor::find()->all();
-        $animalList = ArrayHelper::map($animals, 'id', 'name');
         $doctorList = ArrayHelper::map($doctors, 'id', 'fullName');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -105,7 +98,6 @@ class AnalysisBlankController extends AdminController
         } else {
             return $this->render('update', [
                 'model' => $model,
-                'animalList' => $animalList,
                 'doctorList' => $doctorList
             ]);
         }
