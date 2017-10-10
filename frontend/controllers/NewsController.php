@@ -4,11 +4,10 @@ namespace frontend\controllers;
 
 use yii\web\Controller;
 use yii\data\ActiveDataProvider;
-use common\models\AnalysisBlank;
-use common\models\AnalysisStandart;
+use common\models\News;
 use yii\web\NotFoundHttpException;
 
-class AnalysisController extends Controller
+class NewsController extends Controller
 {
     public function actions()
     {
@@ -21,12 +20,15 @@ class AnalysisController extends Controller
 
     public function actionIndex()
     {
-        $query = AnalysisBlank::find()
-            ->orderBy(['(date_publication)' => SORT_DESC]);
+        $query = News::find()
+            ->orderBy(['(created_at)' => SORT_DESC]);
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'sort' => false
+            'sort' => false,
+            'pagination' => [
+                'pageSize' => 5,
+            ],
         ]);
 
         return $this->render('index', [
@@ -36,20 +38,27 @@ class AnalysisController extends Controller
 
     public function actionView($id)
     {
-        $blank = $this->findModel($id);
+        $content = $this->findModel($id);
+        
+        $query = News::find()
+            ->orderBy(['(created_at)' => SORT_DESC]);
 
-        $standart = AnalysisStandart::find()
-            ->where(['category_id' => $blank->category_id])
-            ->one();
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+            'sort' => false,
+            'pagination' => [
+                'pageSize' => 5,
+            ],
+        ]);
 
         return $this->render('view', [
-            'blank' => $blank,
-            'standart' => $standart
+            'content' => $content,
+            'dataProvider' => $dataProvider
         ]);
     }
     protected function findModel($id)
     {
-        if (($model = AnalysisBlank::findOne($id)) !== null) {
+        if (($model = News::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

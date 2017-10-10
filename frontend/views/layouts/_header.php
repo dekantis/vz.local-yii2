@@ -14,6 +14,7 @@ echo Nav::widget([
         // ['label' => 'Наши врачи', 'url' => ['site/doctors']],
         ['label' => 'Контакты и адреса', 'url' => ['site/contact']],
         ['label' => 'Прайс', 'url' => ['site/price']],
+        ['label' => 'Новости', 'url' => ['news/index']],
     ],
     'options' => ['class' => 'navbar-nav'],
 ]);

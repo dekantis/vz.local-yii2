@@ -2,6 +2,8 @@
     width: 100%;
     padding-right: 10px;
 }
-.recomendation-block img{
-    @include add-border(3px,#cccccc,all);
+.img-news{
+text-align: center;
+max-height: 400px;
+margin-top: 30px;
 }

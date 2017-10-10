@@ -34,4 +34,8 @@ class SiteController extends Controller
     {
         return $this->render('price');
     }
+    public function actionNews()
+    {
+        return $this->render('news');
+    }
 }
