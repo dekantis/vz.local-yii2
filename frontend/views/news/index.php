@@ -1,8 +1,8 @@
 <?php
 
-    use yii\widgets\ListView;
+use yii\widgets\ListView;
 
-    $this->title = 'Новости';
+$this->title = 'Новости';
 ?>
 <section class="section-primary-a">
     <h2>Новости</h2>

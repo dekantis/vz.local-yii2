@@ -30,6 +30,16 @@ class News extends \yii\db\ActiveRecord
     {
         return 'news';
     }
+    public function behaviors()
+    {
+        return [
+            'timestamp' => [
+                'class' => TimeStampBehavior::class,
+                'createdAtAttribute' => 'created_at',
+                'updatedAtAttribute' => false,
+            ]
+        ];
+    }
     /**
      * @inheritdoc
      */
@@ -56,7 +66,7 @@ class News extends \yii\db\ActiveRecord
             'published_at' => 'Опубликовано',
             'image' => 'Фото',
             'image_source' => 'Image Source',
-            'created_at' => 'Создано',
+            'created_at' => 'Опубликовано',
             'updated_at' => 'Обновлено'
         ];
     }
