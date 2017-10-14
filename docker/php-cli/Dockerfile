@@ -21,6 +21,7 @@ RUN apk add --no-cache php7 \
     php7-tokenizer \
     php7-zlib \
     php7-dom \
+    php7-fileinfo \
     && rm -rf /var/cache/apk/*
 
 COPY php.ini /etc/php7/conf.d/50-setting.ini

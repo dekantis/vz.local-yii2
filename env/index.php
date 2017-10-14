@@ -39,6 +39,9 @@ $web = [
     'web/admin/index.php' => 'backend/web/index.php',
     'web/admin/favicon.ico' => 'backend/web/favicon.ico',
     'web/admin/assets' => 'backend/web/assets',
+    'web/admin/css' => 'backend/web/css',
+    //storage
+    'web/storage' => 'storage'
 ];
 
 return [

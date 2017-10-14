@@ -13,7 +13,6 @@ use yii\behaviors\TimestampBehavior;
  * @property string $location
  * @property string $published_at
  * @property string $image
- * @property string $image_source
  * @property string $created_at
  * @property string $updated_at
  *
@@ -23,6 +22,7 @@ use yii\behaviors\TimestampBehavior;
  */
 class News extends \yii\db\ActiveRecord
 {
+    public $imageFile;
     /**
      * @inheritdoc
      */
@@ -36,7 +36,7 @@ class News extends \yii\db\ActiveRecord
             'timestamp' => [
                 'class' => TimeStampBehavior::class,
                 'createdAtAttribute' => 'created_at',
-                'updatedAtAttribute' => false,
+                'updatedAtAttribute' => 'updated_at',
             ]
         ];
     }
@@ -46,10 +46,11 @@ class News extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'text_html', 'news_discriprion', 'published_at', 'image', 'image_source'], 'required'],
+            // [['title', 'text_html', 'news_discriprion'], 'required'],
             [['text_html'], 'string'],
-            [['published_at', 'created_at', 'updated_at'], 'safe'],
-            [['title', 'location','news_discriprion', 'image', 'image_source'], 'string', 'max' => 255]
+            [['created_at', 'updated_at'], 'safe'],
+            [['title','news_discriprion'], 'string', 'max' => 255],
+            [['imageFile'], 'file', 'skipOnEmpty' => false, 'extensions' => ['png', 'jpg']],
         ];
     }
     /**
@@ -62,15 +63,28 @@ class News extends \yii\db\ActiveRecord
             'title' => 'Заголовок',
             'text_html' => 'Текст',
             'news_discriprion'=> 'Описание новости',
-            'location' => 'Location',
-            'published_at' => 'Опубликовано',
             'image' => 'Фото',
-            'image_source' => 'Image Source',
             'created_at' => 'Опубликовано',
             'updated_at' => 'Обновлено'
         ];
     }
-    /**
-     * @return \yii\db\ActiveQuery
-     */
+
+    public function upload()
+    {
+        $path = 'img/news/' . time() . '-' . $this->imageFile->baseName . '.' . $this->imageFile->extension;
+        $fullPath = Yii::getAlias('@storage/'.$path);
+        $this->imageFile->saveAs($fullPath);
+        $this->image = '/storage/'. $path;
+    }
+
+    public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)) {
+
+            $this->upload();
+
+            return true;
+        }
+        return false;
+    }
 }

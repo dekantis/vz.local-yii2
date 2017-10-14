@@ -18,6 +18,7 @@ RUN apk add --no-cache php7-fpm \
     php7-ctype \
     php7-session \
     php7-dom \
+    php7-fileinfo \
     && rm -rf /var/cache/apk/*
 
 RUN ln -s /usr/bin/php7 /usr/bin/php

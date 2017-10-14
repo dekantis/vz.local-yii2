@@ -1,26 +1,32 @@
 <?php
 
-use dosamigos\tinymce\TinyMce;
+use \yii\redactor\widgets\Redactor;
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\ActiveForm;
+use kartik\widgets\FileInput;
 ?>
 <div class="news-form">
-<?php $form = ActiveForm::begin(); ?>
-
-<?= $form->field($model, 'text_html')->widget(TinyMce::className(), [
-    'options' => ['rows' => 16],
-    'language' => 'ru',
-    'clientOptions' => [
-        'plugins' => [
-            "advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
-            "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
-            "table contextmenu directionality emoticons template textcolor paste textcolor colorpicker textpattern"
-        ],
-        'toolbar1' => "newdocument fullpage | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | styleselect formatselect fontselect fontsizeselect",
-        'toolbar2' => "cut copy paste | searchreplace | bullist numlist | outdent indent blockquote | undo redo | link unlink anchor image media code | insertdatetime preview | forecolor backcolor",
-        'toolbar3' => "table | hr removeformat | subscript superscript | charmap emoticons | print fullscreen | ltr rtl | spellchecker | visualchars visualblocks nonbreaking template pagebreak restoredraft",
-    ]
-]) ?>
-<?php ActiveForm::end(); ?>
-
+    <?php $form = ActiveForm::begin(['options' => ['enctype'=>'multipart/form-data']]); ?>
+    <?= $form->field($model, 'title')->textInput() ?>
+    <div class="row">
+        <div class="col-md-3 col-lg-3">
+            <?= $form->field($model, 'imageFile')->fileInput() ?>
+        </div>
+        <div class="col-md-9 col-lg-9">
+            <?= $form->field($model, 'news_discriprion')->textarea(['rows' => 6]) ?>
+        </div>
+    </div>
+    <?= $form->field($model, 'text_html')->widget(Redactor::className(), [
+         'clientOptions' => [
+             'lang' => 'ru',
+             'plugins' => ['clips', 'fontcolor','imagemanager']
+         ]
+    ])?>
+    <div class="form-group">
+        <?= Html::submitButton($model->isNewRecord ? 'Добавить' : 'Редактировать', [
+            'class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary'
+        ]) ?>
+    </div>
+    <?php ActiveForm::end(); ?>
 </div>

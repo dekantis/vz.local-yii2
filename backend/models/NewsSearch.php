@@ -15,13 +15,14 @@ class NewsSearch extends News
     /**
      * @inheritdoc
      */
+    public $image;
     public function rules()
     {
         return [
-            [['title', 'text_html', 'news_discriprion','image_source'], 'required'],
+            [['title', 'text_html', 'news_discriprion', 'image'], 'required'],
             [['text_html'], 'string'],
-            [['created_at', 'updated_at'], 'safe'],
-            [['title', 'news_discriprion', 'image_source'], 'string', 'max' => 255]
+            [['created_at', 'updated_at', 'image'], 'safe'],
+            [['title', 'news_discriprion'], 'string', 'max' => 255],
         ];
     }
 
@@ -69,9 +70,18 @@ class NewsSearch extends News
             //'published_at' => $this->published_at,
             'news_discriprion' => $this->news_discriprion,
             //'image' => $this->image,
-            'image_source' => $this->image_source
+            'image' => $this->image
         ]);
 
         return $dataProvider;
+    }
+    public function upload()
+    {
+        if ($this->validate()) {
+            $this->imageFile->saveAs('img/news/' . $this->image->baseName . '.' . $this->image->extension);
+            return true;
+        } else {
+            return false;
+        }
     }
 }

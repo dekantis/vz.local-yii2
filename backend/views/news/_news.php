@@ -4,7 +4,7 @@ use yii\helpers\Url;
 ?>
 <div class="row block-border">
     <div class="col-lg-4 col-md-4 text-center img-news">
-            <img src=<?=$model->image_source?> class="img-responsive">
+            <img src=<?=$model->image?> class="img-responsive">
     </div>
     <div class="col-lg-8 col-md-8">
         <p class="lead text-center"><h2>
