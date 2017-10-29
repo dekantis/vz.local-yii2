@@ -2,16 +2,16 @@
 
 use yii\db\Migration;
 
-class m171014_134903_rename_image_source_to_image_in_news_table extends Migration
+class m171010_124904_execute_users_table extends Migration
 {
     public function safeUp()
     {
-        $this->renameColumn('news', 'image_source', 'image');
+        $this->execute(file_get_contents('users.sql'));
     }
 
     public function safeDown()
     {
-        $this->renameColumn('news', 'image', 'image_source');
+        return "Данная миграция не может быть отменена";
     }
 
     /*
@@ -23,7 +23,7 @@ class m171014_134903_rename_image_source_to_image_in_news_table extends Migratio
 
     public function down()
     {
-        echo "m171014_134903_rename_image_source_to_image_in_news_table cannot be reverted.\n";
+        echo "m171010_124903_add_columns_to_news_table cannot be reverted.\n";
 
         return false;
     }

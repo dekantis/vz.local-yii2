@@ -177,6 +177,18 @@
   background: rgba(0, 0, 0, 0.65);
 }
 
+/* line 27, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_components.scss */
+td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* line 31, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_components.scss */
+th {
+  vertical-align: middle;
+  text-align: center;
+}
+
 /*Blocks*/
 /* line 2, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_blocks.scss */
 .block, .block-primary, .block-secondary, .block-light, .block-dark {
@@ -350,6 +362,13 @@
 
 /* line 5, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_img.scss */
 .img-news {
+  text-align: center;
+  max-height: 400px;
+  margin-top: 30px;
+}
+
+/* line 10, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_img.scss */
+.img-admin-index {
   text-align: center;
   max-height: 400px;
   margin-top: 30px;

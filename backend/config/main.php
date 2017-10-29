@@ -14,8 +14,8 @@ return [
     'modules' => [
         'redactor' => [
             'class' => 'yii\redactor\RedactorModule',
-            'uploadDir' => '@webroot/img/news',
-            'uploadUrl' => '@web/img/news',
+            'uploadDir' => '@storage/img/news',
+            'uploadUrl' => '/storage/img/news',
             'imageAllowExtensions'=>['jpg','png','gif']
         ],
     ],

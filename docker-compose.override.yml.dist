@@ -3,12 +3,12 @@ services:
     php-cli:
         build:
             args:
-              - GITHUB_OAUTH_TOKEN={...}
+              - GITHUB_OAUTH_TOKEN=42b8f66d6091013307f6e36443eb268214de69b6
     nginx:
         ports:
             - 127.0.10.1:80:80
         environment:
-            - DOMAIN=acc.hlamada.local
+            - DOMAIN=vz.local
     phpmyadmin:
         ports:
          - 8080:80

@@ -9,7 +9,7 @@ class m171010_124903_add_columns_to_news_table extends Migration
         $this->addColumn('news', 'title', $this->string()->notNull());
         $this->addColumn('news', 'news_discriprion', $this->string()->notNull());
         $this->addColumn('news', 'text_html', $this->text()->notNull());
-        $this->addColumn('news', 'image_source', $this->string()->notNull());
+        $this->addColumn('news', 'image', $this->string()->notNull());
         $this->addColumn('news', 'created_at', $this->integer()->notNull());
         $this->addColumn('news', 'updated_at', $this->integer()->notNull());
     }
@@ -19,7 +19,7 @@ class m171010_124903_add_columns_to_news_table extends Migration
         $this->dropColumn('news', 'title');
         $this->dropColumn('news', 'news_discriprion');
         $this->dropColumn('news', 'text_html');
-        $this->dropColumn('news', 'image_source');
+        $this->dropColumn('news', 'image');
         $this->dropColumn('news', 'created_at');
         $this->dropColumn('news', 'updated_at');
     }

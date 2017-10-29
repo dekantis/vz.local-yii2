@@ -6,46 +6,46 @@ $this->title = 'My Yii Application';
 ?>
 <div class="site-index">
 
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
-
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
-
     <div class="body-content">
 
         <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
+            <div class="img-admin-index text-center col-lg-4 col-md-4">
+                <img src="https://avatanplus.com/files/resources/mid/58b43910577bd15a7ffee7e6.png" class="img-responsive">
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+                <p class="lead">Вы зарегестрированный пользователь сайт vetzooland.by </p>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
             </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
+            <div class="col-lg-4 col-md-4 lead text-justify">
+                <h2 class="text-center">Врачи</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+                <p>В данной рубрике вы имеете возможность просмотреть всех докторов или каждого по отдельности, поиск по имени,
+                изменить уже существующего доктора, либо же удалить.</p>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
+                <p class="text-center"><a class="btn btn-primary" href="/admin/doctors/index"> Врачи &raquo;</a></p>
             </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
+            <div class="col-lg-4 col-md-4 lead text-justify">
+                <h2 class="text-center">Бланки</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+                <p>В данной рубрике вы имеете возможность просмотреть все бланки или каждый по отдельности, поиск по имени,
+                изменить уже существующий бланк, либо же удалить.</p>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+                <p class="text-center"><a class="btn btn-primary" href="/admin/analysis-blank/index">Бланки &raquo;</a></p>
+            </div>
+            <div class="col-lg-4 col-md-4 lead text-justify">
+                <h2 class="text-center">Нормы</h2>
+
+                <p>В данной рубрике вы имеете возможность просмотреть все нормы или каждый по отдельности, поиск по полю,
+                изменить уже существующие нормы, либо же удалить.</p>
+
+                <p class="text-center"><a class="btn btn-primary" href="/admin/analysis-standarts/index">Нормы &raquo;</a></p>
+            </div>
+            <div class="col-lg-4 col-md-4 lead text-justify">
+                <h2 class="text-center">Новости</h2>
+
+                <p>В данной рубрике вы имеете возможность просмотреть все новости или каждую по отдельности,
+                изменить уже существующие новости, либо же удалить.</p>
+
+                <p class="text-center"><a class="btn btn-primary" href="/admin/news/index">Новости &raquo;</a></p>
             </div>
         </div>
 

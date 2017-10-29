@@ -56,6 +56,11 @@ AppAsset::register($this);
             'url' => ['/analysis-standarts/index'],
             'visible' => !Yii::$app->user->isGuest
         ],
+        [
+            'label' => 'Новости',
+            'url' => ['/news/index'],
+            'visible' => !Yii::$app->user->isGuest
+        ],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
