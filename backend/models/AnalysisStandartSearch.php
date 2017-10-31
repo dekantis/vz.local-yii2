@@ -83,6 +83,15 @@ class AnalysisStandartSearch extends AnalysisStandart
             'total_bilirubin_max' => $this->total_bilirubin_max,
             'alkaline_phosphatase_max' => $this->alkaline_phosphatase_max,
             'phosphorus_max' => $this->phosphorus_max,
+            'ggt_min' => $this->ggt_min,
+            'cholesterol_min' => $this->cholesterol_min,
+            'mg_min' => $this->mg_min,
+            'ldg_min' => $this->ldg_min,
+            'ggt_max' => $this->ggt_max,
+            'cholesterol_max' => $this->cholesterol_max,
+            'mg_max' => $this->mg_max,
+            'ldg_max' => $this->ldg_max,
+
         ]);
 
         return $dataProvider;

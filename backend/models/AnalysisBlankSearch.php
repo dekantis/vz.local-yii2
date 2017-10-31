@@ -77,6 +77,11 @@ class AnalysisBlankSearch extends AnalysisBlank
             'alkaline_phosphatase' => $this->alkaline_phosphatase,
             'phosphorus' => $this->phosphorus,
             'date_publication' => $this->date_publication,
+            'ggt' => $this->ggt,
+            'cholesterol' => $this->cholesterol,
+            'mg' => $this->mg,
+            'ldg' => $this->ldg,
+
         ]);
 
         $query->andFilterWhere(['like', 'medical_mark', $this->medical_mark]);

@@ -70,7 +70,7 @@ class AnalysisBlank extends \yii\db\ActiveRecord
         return [
             [['animal_name', 'keeper', 'doctor_id', 'category_id'], 'required'],
             [['doctor_id', 'category_id'], 'integer'],
-            [['glucose', 'creatinine', 'alt', 'ast', 'urea', 'lamilaza', 'calcium', 'total_protein', 'total_bilirubin', 'alkaline_phosphatase', 'phosphorus'], 'number'],
+            [['ggt', 'mg', 'cholesterol', 'ldg', 'glucose', 'creatinine', 'alt', 'ast', 'urea', 'lamilaza', 'calcium', 'total_protein', 'total_bilirubin', 'alkaline_phosphatase', 'phosphorus'], 'number'],
             [['date_publication'], 'safe'],
             [['animal_name', 'medical_mark', 'keeper'], 'string'],
             [['doctor_id'], 'exist', 'skipOnError' => true, 'targetClass' => Doctor::className(), 'targetAttribute' => ['doctor_id' => 'id']],
@@ -101,6 +101,10 @@ class AnalysisBlank extends \yii\db\ActiveRecord
             'phosphorus' => 'Фосфор',
             'date_publication' => 'Дата публикации',
             'medical_mark' => 'Врачебная пометка',
+            'ggt' => 'ГГТ',
+            'mg' => 'Магний',
+            'cholesterol' => 'Холестерин',
+            'ldg' => 'ЛДГ',
         ];
     }
 

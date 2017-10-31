@@ -52,6 +52,14 @@ $this->params['breadcrumbs'][] = $this->title;
             'total_bilirubin_max',
             'alkaline_phosphatase_max',
             'phosphorus_max',
+            'ggt_min',
+            'cholesterol_min',
+            'mg_min',
+            'ldg_min',
+            'ggt_max',
+            'cholesterol_max',
+            'mg_max',
+            'ldg_max',
         ],
     ]) ?>
 

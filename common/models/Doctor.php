@@ -84,8 +84,8 @@ class Doctor extends \yii\db\ActiveRecord
 
     public function getFullname()
     {
-        return  $this->lastname
-        . ' ' . $this->name
+        return  $this->name
+        . ' ' . $this->lastname
         . ' ' . $this->patronymic;
     }
 }

@@ -10,7 +10,7 @@ use yii\helpers\Url;
         <p class="lead text-center"><h2>
             <strong><?= $model->title ?></strong>
         </h2></p>
-        <p class="lead text-indent"><?=$model->text_html?></p>
+        <p class="lead text-indent"><?=$model->news_discriprion?></p>
     </div>
     <div class="col-lg-12 col-md-12 block-news-footer">
         <a href="<?=Url::to(['news/view', 'id' => $model->id])?>"class="btn btn-default pull-right">Читать полностью</a><p>Опубликовано: <?=$model->created_at?></p>

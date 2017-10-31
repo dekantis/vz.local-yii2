@@ -52,7 +52,8 @@ class AnalysisStandart extends \yii\db\ActiveRecord
         return [
             [['category_id', 'glucose_min', 'creatinine_min', 'alt_min', 'ast_min', 'urea_min', 'lamilaza_min', 'calcium_min', 'total_protein_min', 'total_bilirubin_min', 'alkaline_phosphatase_min', 'phosphorus_min', 'glucose_max', 'creatinine_max', 'alt_max', 'ast_max', 'urea_max', 'lamilaza_max', 'calcium_max', 'total_protein_max', 'total_bilirubin_max', 'alkaline_phosphatase_max', 'phosphorus_max'], 'required'],
             [['category_id'], 'integer'],
-            [['glucose_min', 'creatinine_min', 'alt_min', 'ast_min', 'urea_min', 'lamilaza_min', 'calcium_min', 'total_protein_min', 'total_bilirubin_min', 'alkaline_phosphatase_min', 'phosphorus_min', 'glucose_max', 'creatinine_max', 'alt_max', 'ast_max', 'urea_max', 'lamilaza_max', 'calcium_max', 'total_protein_max', 'total_bilirubin_max', 'alkaline_phosphatase_max', 'phosphorus_max'], 'number'],
+            [['ggt_min', 'cholesterol_min', 'ldg_min', 'mg_min', 'ggt_max', 'cholesterol_max', 'ldg_max', 'mg_max', 'glucose_min', 'creatinine_min', 'alt_min', 'ast_min', 'urea_min', 'lamilaza_min', 'calcium_min', 'total_protein_min', 'total_bilirubin_min', 'alkaline_phosphatase_min', 'phosphorus_min', 'glucose_max', 'creatinine_max', 'alt_max', 'ast_max', 'urea_max',
+             'lamilaza_max', 'calcium_max', 'total_protein_max', 'total_bilirubin_max', 'alkaline_phosphatase_max', 'phosphorus_max'], 'number'],
             // [['animal_id'], 'exist', 'skipOnError' => true, 'targetClass' => Animal::className(), 'targetAttribute' => ['animal_id' => 'id']],
         ];
     }
@@ -87,6 +88,14 @@ class AnalysisStandart extends \yii\db\ActiveRecord
             'total_bilirubin_max' => 'Total Bilirubin Max',
             'alkaline_phosphatase_max' => 'alkaline_phosphatase Max',
             'phosphorus_max' => 'Phosphorus Max',
+            'ggt_min' => 'ГГТ мин.',
+            'cholesterol_min' => 'Холестерин мин.',
+            'ldg_min' => 'ЛДГ мин.',
+            'mg_min' => 'Магний мин.',
+            'ggt_max' => 'ГГТ макс.',
+            'cholesterol_max' => 'Холестерин макс.',
+            'ldg_max' => 'ЛДГ макс.',
+            'mg_max' => 'Магний макс.'
         ];
     }
 

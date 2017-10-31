@@ -9,6 +9,7 @@ $this->title = 'Главная';
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                 <li data-target="#myCarousel" data-slide-to="1"></li>
                 <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
             </ol>
             <!-- Carousel items -->
             <div class="carousel-inner">
@@ -35,6 +36,15 @@ $this->title = 'Главная';
                         <p>Знайте больше о состоянии вашего любимца
                         </p>
                         <a href="/analysis/" class="btn btn-success btn-advanced">Подробнее</a>
+                    </div>
+                </div>
+                <div class="item item-4">
+                    <!-- <img src="images/slide3.png" alt="Third Slide"> -->
+                    <div class="carousel-caption">
+                        <h3  class="lead text-primary">Новости</h3>
+                        <p>Объявления и новости нашего ресураса
+                        </p>
+                        <a href="/news/" class="btn btn-success btn-advanced">Подробнее</a>
                     </div>
                 </div>
             </div>

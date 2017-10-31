@@ -173,17 +173,24 @@
 }
 
 /* line 24, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_components.scss */
+.carousel .carousel-inner .item-4 {
+  background-image: url(/img/news.jpg);
+  padding: 3px;
+  border: 3px solid #cccccc;
+}
+
+/* line 29, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_components.scss */
 .carousel-caption {
   background: rgba(0, 0, 0, 0.65);
 }
 
-/* line 27, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_components.scss */
+/* line 32, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_components.scss */
 td {
   vertical-align: middle;
   text-align: center;
 }
 
-/* line 31, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_components.scss */
+/* line 36, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_components.scss */
 th {
   vertical-align: middle;
   text-align: center;

@@ -11,6 +11,7 @@ use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
 use common\models\Animal;
 use common\models\Doctor;
+use common\models\AnalysisStandart;
 
 /**
  * AnalysisBlankController implements the CRUD actions for AnalysisBlank model.
@@ -55,8 +56,13 @@ class AnalysisBlankController extends AdminController
      */
     public function actionView($id)
     {
+        $blank = $this->findModel($id);
+        $standart = AnalysisStandart::find()
+            ->where(['category_id' => $blank->category_id])
+            ->one();
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'standart' => $standart,
+            'blank' => $blank,
         ]);
     }
 

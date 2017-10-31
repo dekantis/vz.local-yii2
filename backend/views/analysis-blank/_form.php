@@ -40,6 +40,14 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'phosphorus')->textInput() ?>
 
+    <?= $form->field($model, 'ggt')->textInput() ?>
+
+    <?= $form->field($model, 'cholesterol')->textInput() ?>
+
+    <?= $form->field($model, 'mg')->textInput() ?>
+    
+    <?= $form->field($model, 'ldg')->textInput() ?>
+
     <?= $form->field($model, 'alkaline_phosphatase')->textInput() ?>
 
     <?= $form->field($model, 'medical_mark')->textarea(['rows' => 6]) ?>

@@ -32,7 +32,7 @@
 $web = [
     // fronted
     'web/index.php' => 'frontend/web/index.php',
-    'web/favicon.ico' => 'frontend/web/favicon.ico',
+    'web/logo.ico' => 'frontend/web/logo.ico',
     'web/assets' => 'frontend/web/assets',
     'web/img' => 'frontend/web/img',
     // backend
@@ -40,6 +40,7 @@ $web = [
     'web/admin/favicon.ico' => 'backend/web/favicon.ico',
     'web/admin/assets' => 'backend/web/assets',
     'web/admin/css' => 'backend/web/css',
+    'web/admin/logo.ico' => 'backend/web/logo.ico',
     //storage
     'web/storage' => 'storage'
 ];

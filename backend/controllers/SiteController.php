@@ -51,7 +51,6 @@ class SiteController extends AdminController
     {
         return $this->render('index');
     }
-
     /**
      * Login action.
      *
@@ -89,7 +88,7 @@ class SiteController extends AdminController
         return [
             [
                 'allow' => true,
-                'actions' => ['logout', 'index',],
+                'actions' => ['logout', 'index'],
                 'roles' => ['@'],
             ],
             [

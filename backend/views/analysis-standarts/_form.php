@@ -36,6 +36,14 @@ use common\models\AnalysisBlank;
             <?= $form->field($model, 'alkaline_phosphatase_min')->textInput() ?>
 
             <?= $form->field($model, 'phosphorus_min')->textInput() ?>
+
+            <?= $form->field($model, 'ggt_min')->textInput() ?>
+
+            <?= $form->field($model, 'cholesterol_min')->textInput() ?>
+
+            <?= $form->field($model, 'mg_min')->textInput() ?>
+
+            <?= $form->field($model, 'ldg_min')->textInput() ?>
             </div>
             <div class="col-sm-6">
                 <?= $form->field($model, 'glucose_max')->textInput() ?>
@@ -59,6 +67,14 @@ use common\models\AnalysisBlank;
                 <?= $form->field($model, 'alkaline_phosphatase_max')->textInput() ?>
 
                 <?= $form->field($model, 'phosphorus_max')->textInput() ?>
+
+                <?= $form->field($model, 'ggt_max')->textInput() ?>
+
+                <?= $form->field($model, 'cholesterol_max')->textInput() ?>
+
+                <?= $form->field($model, 'mg_max')->textInput() ?>
+
+                <?= $form->field($model, 'ldg_max')->textInput() ?>
             </div>
         </div>
 
