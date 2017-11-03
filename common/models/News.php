@@ -50,7 +50,7 @@ class News extends \yii\db\ActiveRecord
             [['text_html'], 'string'],
             [['created_at', 'updated_at'], 'safe'],
             [['title','news_discriprion'], 'string', 'max' => 255],
-            [['imageFile'], 'file', 'skipOnEmpty' => false, 'extensions' => ['png', 'jpg']],
+            [['imageFile'], 'file', 'skipOnEmpty' => true, 'extensions' => ['png', 'jpg']],
         ];
     }
     /**
@@ -71,10 +71,12 @@ class News extends \yii\db\ActiveRecord
 
     public function upload()
     {
-        $path = 'img/news/' . time() . '-' . $this->imageFile->baseName . '.' . $this->imageFile->extension;
-        $fullPath = Yii::getAlias('@storage/'.$path);
-        $this->imageFile->saveAs($fullPath);
-        $this->image = '/storage/'. $path;
+        if (!empty($this->imageFile)) {
+            $path = 'img/news/' . time() . '-' . $this->imageFile->baseName . '.' . $this->imageFile->extension;
+            $fullPath = Yii::getAlias('@storage/'.$path);
+            $this->imageFile->saveAs($fullPath);
+            $this->image = '/storage/'. $path;
+        }
     }
 
     public function beforeSave($insert)

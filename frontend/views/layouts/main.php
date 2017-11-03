@@ -15,7 +15,7 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title>Ветзоолэнд | <?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
-     <link rel="shortcut icon" href="/img/logo.ico" type="image/x-icon">
+     <link rel="shortcut icon" href="/logo.ico" type="image/x-icon">
 </head>
 <body>
 <?php $this->beginBody() ?>

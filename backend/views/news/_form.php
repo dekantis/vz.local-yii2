@@ -11,7 +11,11 @@ use kartik\widgets\FileInput;
     <?= $form->field($model, 'title')->textInput() ?>
     <div class="row">
         <div class="col-md-3 col-lg-3">
+            <?php if (!empty($model->image)) : ?>
+                <img src="<?= $model->image ?>" class="img-responsive">
+            <?php endif; ?>
             <?= $form->field($model, 'imageFile')->fileInput() ?>
+
         </div>
         <div class="col-md-9 col-lg-9">
             <?= $form->field($model, 'news_discriprion')->textarea(['rows' => 6]) ?>

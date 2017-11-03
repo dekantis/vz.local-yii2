@@ -94,7 +94,7 @@ class AnalysisBlank extends \yii\db\ActiveRecord
             'ast' => 'АСТ',
             'urea' => 'Мочевина',
             'lamilaza' => 'Альфа Амилаза',
-            'calcium' => 'Сальций',
+            'calcium' => 'Кальций',
             'total_protein' => 'Общий белок',
             'total_bilirubin' => 'Общий билирубин',
             'alkaline_phosphatase' => 'Щелочная фосфатаза',

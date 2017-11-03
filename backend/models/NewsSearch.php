@@ -19,7 +19,7 @@ class NewsSearch extends News
     public function rules()
     {
         return [
-            [['title', 'text_html', 'news_discriprion', 'image'], 'required'],
+            [['title', 'text_html', 'news_discriprion'], 'required'],
             [['text_html'], 'string'],
             [['created_at', 'updated_at', 'image'], 'safe'],
             [['title', 'news_discriprion'], 'string', 'max' => 255],

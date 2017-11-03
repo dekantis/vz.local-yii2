@@ -375,6 +375,14 @@ th {
 }
 
 /* line 10, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_img.scss */
+.img-news-view {
+  text-align: center;
+  max-height: 400px;
+  margin-top: 30px;
+  margin-right: 20px;
+}
+
+/* line 16, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_img.scss */
 .img-admin-index {
   text-align: center;
   max-height: 400px;

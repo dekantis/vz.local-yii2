@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </p>
     <div class="row">
         <h2><?= $model->title?></h2>
-        <div class="col-md-4 col-lg-4 text-center img-news">
+        <div class="col-md-4 col-lg-4 text-center img-news-view">
             <img src=<?=$model->image?> class="img-responsive">
         </div>
         <div class="lead text-justify text-indent">
