@@ -20,15 +20,15 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
     <header>
-        <?= $this->render('_header')?>
+      <?= $this->render('_header')?>
     </header>
-    <div class="container main">
+    <div class="container main block-border">
         <?= $content ?>
-
+    </div>
     <footer class="footer-main">
         <?= $this->render('_footer') ?>
     </footer>
-    </div>
+
 <?php $this->endBody() ?>
 </body>
 </html>

@@ -1,4 +1,11 @@
 /*Blocks*/
+.block-border {
+  @include add-border(2px, $primary-color, all);
+  @include border-radius(10px);
+  -webkit-box-shadow: 11px 9px 36px -5px rgba(153,144,153,0.84);
+  -moz-box-shadow: 11px 9px 36px -5px rgba(153,144,153,0.84);
+  box-shadow: 11px 9px 36px -5px rgba(153,144,153,0.84);
+}
 .block{
     padding:15px;
     margin-bottom:15px;

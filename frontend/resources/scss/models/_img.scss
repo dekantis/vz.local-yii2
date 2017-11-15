@@ -1,17 +1,11 @@
 .lead img{
     width: 100%;
-    padding-right: 10px;
 }
 .img-news{
 text-align: center;
-max-height: 400px;
+max-height: 600px;
 margin-top: 10px;
-}
-.img-news-view{
-text-align: center;
-max-height: 400px;
-margin-top: auto;
-margin-right: 20px;
+overflow-y: hidden;
 }
 .img-admin-index{
     text-align: center;
