@@ -16,7 +16,7 @@ class m170719_095217_create_animals_table extends Migration
 
     public function safeDown()
     {
-        $this->dropTable('animals');
+        echo "Миграция не может быть отменена";
     }
 
     /*

@@ -20,35 +20,35 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'doctor_id')->radioList($doctorList) ?>
 
-    <?= $form->field($model, 'glucose')->textInput() ?>
+    <?= $form->field($model, 'total_protein')->textInput() ?>
 
     <?= $form->field($model, 'creatinine')->textInput() ?>
+
+    <?= $form->field($model, 'urea')->textInput() ?>
 
     <?= $form->field($model, 'alt')->textInput() ?>
 
     <?= $form->field($model, 'ast')->textInput() ?>
 
-    <?= $form->field($model, 'urea')->textInput() ?>
-
     <?= $form->field($model, 'lamilaza')->textInput() ?>
-
-    <?= $form->field($model, 'calcium')->textInput() ?>
-
-    <?= $form->field($model, 'total_protein')->textInput() ?>
-
-    <?= $form->field($model, 'total_bilirubin')->textInput() ?>
-
-    <?= $form->field($model, 'phosphorus')->textInput() ?>
 
     <?= $form->field($model, 'ggt')->textInput() ?>
 
-    <?= $form->field($model, 'cholesterol')->textInput() ?>
+    <?= $form->field($model, 'alkaline_phosphatase')->textInput() ?>
+
+    <?= $form->field($model, 'phosphorus')->textInput() ?>
+
+    <?= $form->field($model, 'calcium')->textInput() ?>
 
     <?= $form->field($model, 'mg')->textInput() ?>
-    
+
+    <?= $form->field($model, 'total_bilirubin')->textInput() ?>
+
+    <?= $form->field($model, 'cholesterol')->textInput() ?>
+
     <?= $form->field($model, 'ldg')->textInput() ?>
 
-    <?= $form->field($model, 'alkaline_phosphatase')->textInput() ?>
+    <?= $form->field($model, 'glucose')->textInput() ?>
 
     <?= $form->field($model, 'medical_mark')->textarea(['rows' => 6]) ?>
 

@@ -28,6 +28,5 @@ class m171005_154526_drop_unused_tables extends Migration
     public function down()
     {
         echo 'Данная миграция не может быть отменена';
-        return false;
     }
 }

@@ -52,9 +52,6 @@ class m170719_100854_create_keepers_table extends Migration
      */
     public function down()
     {
-        $this->dropForeignKey('animals_keepers-keeper', 'animals_keepers');
-        $this->dropForeignKey('animals_keepers-animal', 'animals_keepers');
-        $this->dropTable('keepers');
-        $this->dropTable('animals_keepers');
+      echo "Миграция не может быть отменена";
     }
 }

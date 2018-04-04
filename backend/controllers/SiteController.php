@@ -6,6 +6,8 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
+use common\models\SignupForm;
+use common\models\User;
 use backend\controllers\AdminController;
 
 /**
@@ -71,6 +73,30 @@ class SiteController extends AdminController
             ]);
         }
     }
+    public function actionSignup()
+    {
+      if (!Yii::$app->user->isGuest) {
+          return $this->goHome();
+      }
+      $model = new SignupForm();
+
+      if($model->load(\Yii::$app->request->post()) && $model->validate()){
+        $user = new User();
+        $user->username = $model->username;
+        $user->setPassword($model->password);
+        $user->phone = $model->phone;
+        $user->name = $model->name;
+        $user->family = $model->family;
+        $user->generateAuthKey();
+        if($user->save()) {
+          return $this->goHome();
+        }
+      }
+          return $this->render('signup', [
+              'model' => $model,
+          ]);
+
+    }
 
     /**
      * Logout action.
@@ -93,7 +119,7 @@ class SiteController extends AdminController
             ],
             [
                 'allow' => true,
-                'actions' => ['login', 'error'],
+                'actions' => ['login', 'error', 'signup'],
             ]
         ];
     }

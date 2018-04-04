@@ -2,7 +2,7 @@
 
 use yii\db\Migration;
 
-class m171029_155714_add_columns_to_analysis_nlank_table extends Migration
+class m171029_155714_add_columns_to_analysis_blank_table extends Migration
 {
     public function safeUp()
     {
@@ -29,7 +29,7 @@ class m171029_155714_add_columns_to_analysis_nlank_table extends Migration
 
     public function down()
     {
-        echo "m171029_155714_add_columns_to_analysis_nlank_table cannot be reverted.\n";
+        echo "m171029_155714_add_columns_to_analysis_blank_table cannot be reverted.\n";
 
         return false;
     }

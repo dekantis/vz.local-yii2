@@ -5,7 +5,7 @@ use yii\db\Migration;
 /**
  * Handles the creation of table `news`.
  */
-class m170725_135708_execute_master_table extends Migration
+class m181725_135708_execute_master_table extends Migration
 {
     /**
      * @inheritdoc
