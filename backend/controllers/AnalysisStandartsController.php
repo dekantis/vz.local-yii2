@@ -4,8 +4,9 @@ namespace backend\controllers;
 
 use Yii;
 use common\models\AnalysisStandart;
+use common\models\User;
 use backend\models\AnalysisStandartSearch;
-use backend\controllers\AdminController;
+use backend\controllers\UserController;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -13,7 +14,7 @@ use yii\filters\VerbFilter;
 /**
  * AnalysisStandartController implements the CRUD actions for AnalysisStandart model.
  */
-class AnalysisStandartsController extends AdminController
+class AnalysisStandartsController extends UserController
 {
     /**
      * @inheritdoc
@@ -132,6 +133,9 @@ class AnalysisStandartsController extends AdminController
                 'allow' => true,
                 'actions' => ['create', 'update', 'index', 'view', 'delete'],
                 'roles' => ['@'],
+                'matchCallback' => function ($rule, $action) {
+                    return (User::isUserAdmin(Yii::$app->user->identity->username)||User::isUserModer(Yii::$app->user->identity->username));
+                }
             ]
         ];
     }

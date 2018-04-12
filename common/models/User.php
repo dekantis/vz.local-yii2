@@ -20,11 +20,15 @@ use yii\web\IdentityInterface;
  * @property integer $created_at
  * @property integer $updated_at
  * @property string $password write-only password
+ * @property Profile $profile
  */
 class User extends ActiveRecord implements IdentityInterface
 {
      const STATUS_DELETED = 0;
      const STATUS_ACTIVE = 10;
+     const ROLE_ADMIN = 10;
+     const ROLE_MODER = 20;
+     const ROLE_USER = 30;
 
      /**
       * @inheritdoc
@@ -51,7 +55,7 @@ class User extends ActiveRecord implements IdentityInterface
     {
          return [
              ['status', 'default', 'value' => self::STATUS_ACTIVE],
-             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
+             ['role', 'in', 'range' => [self::ROLE_USER, self::ROLE_ADMIN, self::ROLE_MODER]],
         ];
     }
 
@@ -63,6 +67,30 @@ class User extends ActiveRecord implements IdentityInterface
          return static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE]);
     }
 
+     /**
+      * @inheritdoc
+      */
+    public static function isUserAdmin($username)
+    {
+        if (static::findOne(['username' => $username, 'role' => self::ROLE_ADMIN]))
+        {
+            return true;
+        } else {
+            return false;
+        }
+    }
+     /**
+      * @inheritdoc
+      */
+    public static function isUserModer($username)
+    {
+        if (static::findOne(['username' => $username, 'role' => self::ROLE_MODER]))
+        {
+            return true;
+        } else {
+            return false;
+        }
+    }
      /**
       * @inheritdoc
       */
@@ -133,5 +161,9 @@ class User extends ActiveRecord implements IdentityInterface
     public function generateAuthKey()
     {
          $this->auth_key = Yii::$app->security->generateRandomString();
+    }
+    public function getProfile()
+    {
+        return $this->hasOne(Profile::className(), ['user_id' => 'id']);
     }
 }

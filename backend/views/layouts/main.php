@@ -22,7 +22,7 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
-    <link rel="shortcut icon" href="/admin/logo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/user/logo.ico" type="image/x-icon">
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -37,11 +37,6 @@ AppAsset::register($this);
         ],
     ]);
     $menuItems = [
-        [
-            'label' => 'На сайт',
-            'url' => ['/../site/'],
-            'visible' => !Yii::$app->user->isGuest
-        ],
         [
             'label' => 'Врачи',
             'url' => ['/doctors/index'],
@@ -61,6 +56,11 @@ AppAsset::register($this);
             'label' => 'Новости',
             'url' => ['/news/index'],
             'visible' => !Yii::$app->user->isGuest
+        ],
+        [
+          'label' => 'Мой профиль',
+          'url' => ['/profile/index'],
+          'visible' => !Yii::$app->user->isGuest
         ],
     ];
     if (Yii::$app->user->isGuest) {
@@ -93,9 +93,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <p class="pull-left">&copy; Ветзоолэнд <?= date('Y') ?></p>
     </div>
 </footer>
 

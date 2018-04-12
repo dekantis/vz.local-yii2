@@ -36,11 +36,11 @@ $web = [
     'web/assets' => 'frontend/web/assets',
     'web/img' => 'frontend/web/img',
     // backend
-    'web/admin/index.php' => 'backend/web/index.php',
-    'web/admin/favicon.ico' => 'backend/web/favicon.ico',
-    'web/admin/assets' => 'backend/web/assets',
-    'web/admin/css' => 'backend/web/css',
-    'web/admin/logo.ico' => 'backend/web/logo.ico',
+    'web/user/index.php' => 'backend/web/index.php',
+    'web/user/favicon.ico' => 'backend/web/favicon.ico',
+    'web/user/assets' => 'backend/web/assets',
+    'web/user/css' => 'backend/web/css',
+    'web/user/logo.ico' => 'backend/web/logo.ico',
     //storage
     'web/storage' => 'storage'
 ];

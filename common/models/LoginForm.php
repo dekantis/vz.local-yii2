@@ -47,6 +47,23 @@ class LoginForm extends Model
      * @param string $attribute the attribute currently being validated
      * @param array $params the additional name-value pairs given in the rule
      */
+    public function loginAdmin()
+    {
+        if ($this->validate() && User::isUserAdmin($this->username)) {
+           return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
+        } else {
+           return false;
+       }
+    }
+    public function loginModer()
+    {
+        if ($this->validate() && User::isUserModer($this->username)) {
+           return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
+        } else {
+           return false;
+       }
+    }
+
     public function validatePassword($attribute, $params)
     {
         if (!$this->hasErrors()) {

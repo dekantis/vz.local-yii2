@@ -8,12 +8,13 @@ use yii\filters\AccessControl;
 use common\models\LoginForm;
 use common\models\SignupForm;
 use common\models\User;
-use backend\controllers\AdminController;
+use backend\controllers\UserController;
+use common\models\Profile;
 
 /**
  * Site controller
  */
-class SiteController extends AdminController
+class SiteController extends UserController
 {
     /**
      * @inheritdoc
@@ -45,6 +46,30 @@ class SiteController extends AdminController
     }
 
     /**
+     * Displays profile.
+     *
+     * @return string
+     */
+    public function actionProfile()
+    {
+        $model = ($model = Profile::findOne(Yii::$app->user->id)) ? $model : new Profile();
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            if ($model->updateProfile()) {
+                Yii::$app->session->setFlash('success', 'Профиль изменен');
+            } else {
+              Yii::$app->session->setFlash('error', 'Профиль не изменен');
+              Yii::error('Ошибка записи. Профиль не изменен');
+              return $this->refresh();
+            }
+          }
+          return $this->render(
+            'profile',
+            [
+              'model' => $model
+            ]
+          );
+    }
+    /**
      * Displays homepage.
      *
      * @return string
@@ -60,18 +85,21 @@ class SiteController extends AdminController
      */
     public function actionLogin()
     {
-        if (!Yii::$app->user->isGuest) {
-            return $this->goHome();
-        }
+      if (!\Yii::$app->user->isGuest) {
+         return $this->goHome();
+      }
 
-        $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
-        } else {
-            return $this->render('login', [
-                'model' => $model,
-            ]);
-        }
+      $model = new LoginForm();
+      if ($model->load(Yii::$app->request->post()) && $model->loginAdmin()) {
+         return $this->goBack();
+      } else {
+        if ($model->load(Yii::$app->request->post()) && $model->loginModer()) {
+           return $this->goBack();
+        } else
+          return $this->render('login', [
+             'model' => $model,
+          ]);
+      }
     }
     public function actionSignup()
     {
@@ -84,10 +112,8 @@ class SiteController extends AdminController
         $user = new User();
         $user->username = $model->username;
         $user->setPassword($model->password);
-        $user->phone = $model->phone;
-        $user->name = $model->name;
-        $user->family = $model->family;
         $user->generateAuthKey();
+        $user->status = 20;
         if($user->save()) {
           return $this->goHome();
         }

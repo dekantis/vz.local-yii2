@@ -4,13 +4,13 @@
 </IfModule>
 
 <IfModule mod_rewrite.c>
-    # если /admin, то в backend
-    RewriteCond %{REQUEST_URI} ^/(admin)
-    RewriteRule ^admin/assets/(.*)$ backend/web/assets/$1 [L]
-    RewriteRule ^admin/css/(.*)$ backend/web/css/$1 [L]
-    RewriteRule ^admin/js/(.*)$ backend/web/js/$1 [L]
+    # если /user, то в backend
+    RewriteCond %{REQUEST_URI} ^/(user)
+    RewriteRule ^user/assets/(.*)$ backend/web/assets/$1 [L]
+    RewriteRule ^user/css/(.*)$ backend/web/css/$1 [L]
+    RewriteRule ^user/js/(.*)$ backend/web/js/$1 [L]
     RewriteCond %{REQUEST_URI} !^/backend/web/(assets|js|css|js)/
-    RewriteCond %{REQUEST_URI} ^/(admin)
+    RewriteCond %{REQUEST_URI} ^/(user)
     RewriteRule ^.*$ backend/web/index.php [L]
     RewriteCond %{REQUEST_URI} ^/(assets|css|js|images)
     RewriteRule ^assets/(.*)$ frontend/web/assets/$1 [L]

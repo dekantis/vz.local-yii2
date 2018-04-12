@@ -4,8 +4,9 @@ namespace backend\controllers;
 
 use Yii;
 use common\models\FileStorage;
+use common\models\User;
 use backend\models\FileStorageSearch;
-use backend\controllers\AdminController;
+use backend\controllers\UserController;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -13,7 +14,7 @@ use yii\filters\VerbFilter;
 /**
  * FileStorageController implements the CRUD actions for FileStorage model.
  */
-class FileStorageController extends AdminController
+class FileStorageController extends UserController
 {
     /**
      * @inheritdoc
@@ -131,6 +132,9 @@ class FileStorageController extends AdminController
                 'allow' => true,
                 'actions' => ['create', 'update', 'index', 'view', 'delete'],
                 'roles' => ['@'],
+                'matchCallback' => function ($rule, $action) {
+                    return (User::isUserAdmin(Yii::$app->user->identity->username)||User::isUserModer(Yii::$app->user->identity->username));
+                }
             ]
         ];
     }

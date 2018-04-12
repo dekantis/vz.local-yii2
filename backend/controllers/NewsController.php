@@ -4,8 +4,9 @@ namespace backend\controllers;
 
 use Yii;
 use common\models\News;
+use common\models\User;
 use backend\models\NewsSearch;
-use backend\controllers\AdminController;
+use backend\controllers\UserController;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
@@ -14,7 +15,7 @@ use yii\web\UploadedFile;
 /**
  * AnalysisBlankController implements the CRUD actions for AnalysisBlank model.
  */
-class NewsController extends AdminController
+class NewsController extends UserController
 {
     /**
      * @inheritdoc
@@ -142,6 +143,9 @@ class NewsController extends AdminController
                 'allow' => true,
                 'actions' => ['create', 'update', 'index', 'view', 'delete'],
                 'roles' => ['@'],
+                'matchCallback' => function ($rule, $action) {
+                    return (User::isUserAdmin(Yii::$app->user->identity->username)||User::isUserModer(Yii::$app->user->identity->username));
+                }
             ]
         ];
     }

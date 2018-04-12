@@ -5,10 +5,11 @@ namespace backend\controllers;
 use Yii;
 use common\models\AnalysisBlank;
 use backend\models\AnalysisBlankSearch;
-use backend\controllers\AdminController;
+use backend\controllers\UserController;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
+use common\models\User;
 use common\models\Animal;
 use common\models\Doctor;
 use common\models\AnalysisStandart;
@@ -16,7 +17,7 @@ use common\models\AnalysisStandart;
 /**
  * AnalysisBlankController implements the CRUD actions for AnalysisBlank model.
  */
-class AnalysisBlankController extends AdminController
+class AnalysisBlankController extends UserController
 {
     /**
      * @inheritdoc
@@ -145,6 +146,9 @@ class AnalysisBlankController extends AdminController
                 'allow' => true,
                 'actions' => ['create', 'update', 'index', 'view', 'delete'],
                 'roles' => ['@'],
+                'matchCallback' => function ($rule, $action) {
+                    return (User::isUserAdmin(Yii::$app->user->identity->username)||User::isUserModer(Yii::$app->user->identity->username));
+                }
             ]
         ];
     }

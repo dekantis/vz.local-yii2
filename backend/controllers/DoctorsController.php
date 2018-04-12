@@ -4,8 +4,9 @@ namespace backend\controllers;
 
 use Yii;
 use common\models\Doctor;
+use common\models\User;
 use backend\models\DoctorSearch;
-use backend\controllers\AdminController;
+use backend\controllers\UserController;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -13,7 +14,7 @@ use yii\filters\VerbFilter;
 /**
  * DoctorsController implements the CRUD actions for Doctor model.
  */
-class DoctorsController extends AdminController
+class DoctorsController extends UserController
 {
     /**
      * @inheritdoc
@@ -131,6 +132,9 @@ class DoctorsController extends AdminController
                 'allow' => true,
                 'actions' => ['create', 'update', 'index', 'view', 'delete'],
                 'roles' => ['@'],
+                'matchCallback' => function ($rule, $action) {
+                    return (User::isUserAdmin(Yii::$app->user->identity->username)||User::isUserModer(Yii::$app->user->identity->username));
+                }
             ]
         ];
     }

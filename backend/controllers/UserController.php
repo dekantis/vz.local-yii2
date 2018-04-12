@@ -9,7 +9,7 @@ use yii\filters\AccessControl;
 /**
  * AnalysisBlankController implements the CRUD actions for AnalysisBlank model.
  */
-abstract class AdminController extends Controller
+abstract class UserController extends Controller
 {
     public function behaviors()
     {
