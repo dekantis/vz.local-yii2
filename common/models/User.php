@@ -30,6 +30,23 @@ class User extends ActiveRecord implements IdentityInterface
      const ROLE_MODER = 20;
      const ROLE_USER = 30;
 
+     public function getRoleList()
+     {
+         return [
+             self::ROLE_ADMIN => 'Админ',
+             self::ROLE_MODER => 'Модератор',
+             self::ROLE_USER => 'Пользовтаель',
+         ];
+     }
+
+     public function getStatusList()
+     {
+         return [
+             self::STATUS_DELETED => 'Заблокирован',
+             self::STATUS_ACTIVE => 'Активен',
+         ];
+     }
+
      /**
       * @inheritdoc
       */
@@ -59,6 +76,18 @@ class User extends ActiveRecord implements IdentityInterface
         ];
     }
 
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'username' => 'Логин',
+            'email' => 'Email',
+            'status'=> 'Статус',
+            'role' => 'Права',
+            'created_at' => 'Опубликовано',
+            'updated_at' => 'Обновлено'
+        ];
+    }
      /**
       * @inheritdoc
       */
@@ -85,6 +114,18 @@ class User extends ActiveRecord implements IdentityInterface
     public static function isUserModer($username)
     {
         if (static::findOne(['username' => $username, 'role' => self::ROLE_MODER]))
+        {
+            return true;
+        } else {
+            return false;
+        }
+    }
+     /**
+      * @inheritdoc
+      */
+    public static function isUser($username)
+    {
+        if (static::findOne(['username' => $username, 'role' => self::ROLE_USER]))
         {
             return true;
         } else {

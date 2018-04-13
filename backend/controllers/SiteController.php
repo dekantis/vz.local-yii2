@@ -45,31 +45,7 @@ class SiteController extends UserController
         ];
     }
 
-    /**
-     * Displays profile.
-     *
-     * @return string
-     */
-    public function actionProfile()
-    {
-        $model = ($model = Profile::findOne(Yii::$app->user->id)) ? $model : new Profile();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->updateProfile()) {
-                Yii::$app->session->setFlash('success', 'Профиль изменен');
-            } else {
-              Yii::$app->session->setFlash('error', 'Профиль не изменен');
-              Yii::error('Ошибка записи. Профиль не изменен');
-              return $this->refresh();
-            }
-          }
-          return $this->render(
-            'profile',
-            [
-              'model' => $model
-            ]
-          );
-    }
-    /**
+/**
      * Displays homepage.
      *
      * @return string
@@ -90,12 +66,9 @@ class SiteController extends UserController
       }
 
       $model = new LoginForm();
-      if ($model->load(Yii::$app->request->post()) && $model->loginAdmin()) {
+      if ($model->load(Yii::$app->request->post()) && ($model->loginAdmin())||($model->loginModer())||($model->loginUser())) {
          return $this->goBack();
       } else {
-        if ($model->load(Yii::$app->request->post()) && $model->loginModer()) {
-           return $this->goBack();
-        } else
           return $this->render('login', [
              'model' => $model,
           ]);
@@ -113,7 +86,7 @@ class SiteController extends UserController
         $user->username = $model->username;
         $user->setPassword($model->password);
         $user->generateAuthKey();
-        $user->status = 20;
+        $user->role = 30;
         if($user->save()) {
           return $this->goHome();
         }

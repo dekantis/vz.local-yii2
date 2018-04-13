@@ -9,6 +9,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
+use common\models\User;
 
 AppAsset::register($this);
 ?>
@@ -31,32 +32,34 @@ AppAsset::register($this);
     <?php
     NavBar::begin([
         'brandLabel' => 'Главная',
-        'brandUrl' => ['/../site/'],
+        'brandUrl' => ['/site/'],
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
     $menuItems = [
         [
+            'label' => 'Пользователи',
+            'url' => ['/customers/index'],
+            'visible' => (!Yii::$app->user->isGuest)&&(User::isUserAdmin(Yii::$app->user->identity->username))
+        ],
+        [
             'label' => 'Врачи',
             'url' => ['/doctors/index'],
-            'visible' => !Yii::$app->user->isGuest
+            'visible' => (!Yii::$app->user->isGuest)&&(User::isUserAdmin(Yii::$app->user->identity->username)||User::isUserModer(Yii::$app->user->identity->username))
         ],
         [
             'label' => 'Бланки',
             'url' => ['/analysis-blank/index'],
-            'visible' => !Yii::$app->user->isGuest
-        ],
+            'visible' => (!Yii::$app->user->isGuest)&&(User::isUserAdmin(Yii::$app->user->identity->username)||User::isUserModer(Yii::$app->user->identity->username))        ],
         [
             'label' => 'Нормы',
             'url' => ['/analysis-standarts/index'],
-            'visible' => !Yii::$app->user->isGuest
-        ],
+            'visible' => (!Yii::$app->user->isGuest)&&(User::isUserAdmin(Yii::$app->user->identity->username)||User::isUserModer(Yii::$app->user->identity->username))        ],
         [
             'label' => 'Новости',
             'url' => ['/news/index'],
-            'visible' => !Yii::$app->user->isGuest
-        ],
+            'visible' => (!Yii::$app->user->isGuest)&&(User::isUserAdmin(Yii::$app->user->identity->username)||User::isUserModer(Yii::$app->user->identity->username))        ],
         [
           'label' => 'Мой профиль',
           'url' => ['/profile/index'],

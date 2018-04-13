@@ -63,6 +63,14 @@ class LoginForm extends Model
            return false;
        }
     }
+    public function loginUser()
+    {
+        if ($this->validate() && User::isUser($this->username)) {
+           return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
+        } else {
+           return false;
+       }
+    }
 
     public function validatePassword($attribute, $params)
     {

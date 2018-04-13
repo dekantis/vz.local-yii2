@@ -45,7 +45,11 @@ class ProfileController extends UserController
      *
      * @return string
      */
-    public function actionIndex()
+   public function actionIndex()
+   {
+       return $this->render('index');
+   }
+    public function actionSettings()
     {
       $model = ($model = Profile::findOne(Yii::$app->user->id)) ? $model : new Profile();
       if ($model->load(Yii::$app->request->post()) && $model->validate()) {
@@ -58,7 +62,7 @@ class ProfileController extends UserController
           }
         }
         return $this->render(
-          'index',
+          'settings',
           [
             'model' => $model
           ]
@@ -69,11 +73,8 @@ class ProfileController extends UserController
         return [
             [
                 'allow' => true,
-                'actions' => ['index'],
+                'actions' => ['index', 'settings'],
                 'roles' => ['@'],
-                'matchCallback' => function ($rule, $action) {
-                    return (User::isUserAdmin(Yii::$app->user->identity->username)||User::isUserModer(Yii::$app->user->identity->username));
-                }
             ],
         ];
     }

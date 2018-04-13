@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <div class="form-group">
                     <?= Html::submitButton(Html::encode('Вход'), ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-                    <?= Html::a(Html::encode('Регистрация'), Html::encode('/admin/site/signup'), ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+                    <?= Html::a(Html::encode('Регистрация'), Html::encode('/site/'), ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
                 </div>
 
             <?php ActiveForm::end(); ?>
