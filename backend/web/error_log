@@ -1,0 +1,2 @@
+[18-Jun-2018 01:51:50 Europe/Minsk] PHP Fatal error:  Can't use method return value in write context in /home/vetzooland/public_html/backend/controllers/SettingsController.php on line 28
+[18-Jun-2018 01:51:59 Europe/Minsk] PHP Fatal error:  Can't use method return value in write context in /home/vetzooland/public_html/backend/controllers/SettingsController.php on line 28

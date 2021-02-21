@@ -24,7 +24,7 @@ class Doctor extends \yii\db\ActiveRecord
     const SPECIALISATION_LABORANT = 30;
     const SPECIALISATION_DANTIST = 40;
 
-    public function getTypeList()
+    public static function getTypeList()
     {
         return [
             self::SPECIALISATION_CHERURG => 'Хирург',
@@ -58,11 +58,11 @@ class Doctor extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'lastname' => 'Lastname',
-            'patronymic' => 'Patronymic',
-            'specialisation_id' => 'Specialisation ID',
-            'avatar_id' => 'Avatar ID',
+            'name' => 'Имя',
+            'lastname' => 'Фамилия',
+            'patronymic' => 'Отчество',
+            'specialisation_id' => 'Специализация',
+            'avatar_id' => 'Фотография',
         ];
     }
 
@@ -84,8 +84,8 @@ class Doctor extends \yii\db\ActiveRecord
 
     public function getFullname()
     {
-        return  $this->name
-        . ' ' . $this->lastname
+        return  $this->lastname
+        . ' ' . $this->name
         . ' ' . $this->patronymic;
     }
 }

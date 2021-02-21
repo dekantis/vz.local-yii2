@@ -8,11 +8,16 @@
     background:#fff;
     margin-bottom:30px;
     a{
-        color:$primary-color !important;
+        color: $primary-color !important;
         font-size:20px;
         letter-spacing:-0.5px;
         padding-bottom:24px !important;
         padding-top:20px !important;
+    }
+    li.active {
+        a {
+            color: #e4eef2 !important;
+        }
     }
 }
 .navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {

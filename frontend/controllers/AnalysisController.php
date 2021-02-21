@@ -52,7 +52,7 @@ class AnalysisController extends Controller
         if (($model = AnalysisBlank::findOne($id)) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
+            throw new NotFoundHttpException('Страница не существует!');
         }
     }
 }

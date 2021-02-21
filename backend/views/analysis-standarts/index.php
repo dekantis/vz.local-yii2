@@ -3,12 +3,14 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+use common\grid\EnumColumn;
+use common\models\AnalysisBlank;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\AnalysisStandartSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Analysis Standarts';
+$this->title = 'Нормы анализов';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="analysis-standart-index">
@@ -17,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Analysis Standart', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Добавить нормы анализов', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 <?php Pjax::begin(); ?>    <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -25,11 +27,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'category_id',
-            'glucose_min',
-            'creatinine_min',
-            'alt_min',
+            //'id',
+            [
+                'class' => EnumColumn::class,
+                'attribute' => 'category_id',
+                'enum' => AnalysisBlank::getTypeList()
+            ],
+            //'glucose_min',
+            //'creatinine_min',
+            //'alt_min',
             // 'ast_min',
             // 'urea_min',
             // 'lamilaza_min',

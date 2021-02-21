@@ -1,0 +1,240 @@
+a
+{
+   color: #0000FF;
+   text-decoration: underline;
+}
+a:visited
+{
+   color: #800080;
+}
+a:active
+{
+   color: #FF0000;
+}
+a:hover
+{
+   color: #0000FF;
+   text-decoration: underline;
+}
+a.style1
+{
+   color: #0000BF;
+   text-decoration: none;
+}
+a.style1:visited
+{
+   color: #00008C;
+   text-decoration: none;
+}
+a.style1:active
+{
+   color: #FF6820;
+   text-decoration: none;
+}
+a.style1:hover
+{
+	color: #0000FF;
+	text-decoration: none;
+	font-family: Arial;
+	font-size: 18px;
+	font-style: italic;
+	font-weight: bold;
+}
+a.style2
+{
+   color: #0000FF;
+   text-decoration: underline;
+}
+a.style2:visited
+{
+   color: #800080;
+   text-decoration: underline;
+}
+a.style2:active
+{
+   color: #0000FF;
+   text-decoration: none;
+}
+a.style2:hover
+{
+   color: #8B0000;
+   text-decoration: underline;
+}
+a.style3
+{
+   color: #00008C;
+   text-decoration: underline;
+}
+a.style3:visited
+{
+   color: #00008C;
+   text-decoration: underline;
+}
+a.style3:active
+{
+   color: #0000FF;
+   text-decoration: underline;
+}
+a.style3:hover
+{
+   color: #FF0000;
+   text-decoration: underline;
+}
+a.style4
+{
+   color: #FFFFFF;
+   font-weight: bold;
+   text-decoration: underline;
+}
+a.style4:visited
+{
+   color: #FFFFFF;
+   font-weight: bold;
+   text-decoration: underline;
+}
+a.style4:active
+{
+   color: #FF0000;
+   text-decoration: underline;
+}
+a.style4:hover
+{
+   color: #FF0000;
+   text-decoration: underline;
+}
+a.style5
+{
+   color: #FFFFFF;
+   text-decoration: underline;
+}
+a.style5:visited
+{
+   color: #FFFFFF;
+   text-decoration: underline;
+}
+a.style5:active
+{
+   color: #FF0000;
+   text-decoration: underline;
+}
+a.style5:hover
+{
+   color: #FF0000;
+   text-decoration: underline;
+}
+a.style6
+{
+   color: #FFFFFF;
+   text-decoration: none;
+}
+a.style6:visited
+{
+   color: #FFFFFF;
+   text-decoration: none;
+}
+a.style6:active
+{
+   color: #FF0000;
+   text-decoration: none;
+}
+a.style6:hover
+{
+   color: #FF0000;
+   text-decoration: none;
+}
+h1
+{
+   font-family: "Palatino Linotype";
+   font-size: 24px;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+   color: #00008C;
+   background-color: transparent;
+   margin: 0px 0px 0px 0px;
+   padding: 0px 0px 0px 0px;
+   display: inline;
+}
+h2
+{
+	font-family: "Comic Sans MS", cursive;
+	font-size: 60px;
+	text-decoration: none;
+	color: #FF0000;
+	background-color: transparent;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	display: inline;
+	text-align: center;
+}
+h3
+{
+   font-family: "Palatino Linotype";
+   font-size: 12px;
+   font-weight: normal;
+   font-style: normal;
+   text-decoration: none;
+   color: #00008A;
+   background-color: transparent;
+   margin: 0px 0px 0px 0px;
+   padding: 0px 0px 0px 0px;
+   display: inline;
+}
+h4
+{
+   font-family: "Palatino Linotype";
+   font-size: 21px;
+   font-weight: normal;
+   font-style: normal;
+   text-decoration: none;
+   color: #FF0000;
+   background-color: transparent;
+   margin: 0px 0px 0px 0px;
+   padding: 0px 0px 0px 0px;
+   display: inline;
+}
+h5
+{
+   font-family: Arial;
+   font-size: 19px;
+   font-weight: normal;
+   font-style: normal;
+   text-decoration: none;
+   color: #000000;
+   background-color: transparent;
+   margin: 0px 0px 0px 0px;
+   padding: 0px 0px 0px 0px;
+   display: inline;
+}
+h6
+{
+   font-family: "Palatino Linotype";
+   font-size: 13px;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+   color: #000000;
+   background-color: transparent;
+   margin: 0px 0px 0px 0px;
+   padding: 0px 0px 0px 0px;
+   display: inline;
+}
+.CustomStyle
+{
+   font-family: Arial;
+   font-size: 16px;
+   font-weight: bold;
+   font-style: normal;
+   text-decoration: none;
+   color: #000080;
+   background-color: transparent;
+}
+.style1
+{
+   font-family: Arial;
+   font-size: 15px;
+   font-weight: normal;
+   font-style: normal;
+   text-decoration: none;
+   background-color: transparent;
+}

@@ -2,19 +2,13 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'Приветствие';
 ?>
 <div class="site-index">
 
     <div class="body-content">
 
         <div class="row">
-            <div class="img-admin-index text-center col-lg-4 col-md-4">
-                <img src="https://avatanplus.com/files/resources/mid/58b43910577bd15a7ffee7e6.png" class="img-responsive">
-
-                <p class="lead">Вы зарегестрированный пользователь сайт vetzooland.by </p>
-
-            </div>
             <div class="col-lg-4 col-md-4 lead text-justify">
                 <h2 class="text-center">Врачи</h2>
 
@@ -46,6 +40,22 @@ $this->title = 'My Yii Application';
                 изменить уже существующие новости, либо же удалить.</p>
 
                 <p class="text-center"><a class="btn btn-primary" href="/user/news/index">Новости &raquo;</a></p>
+            </div>
+            <div class="col-lg-4 col-md-4 lead text-justify">
+                <h2 class="text-center">Пользователи</h2>
+
+                <p>В данной рубрике вы имеете возможность просмотреть всех пользователи или каждого по отдельности, поиск информации о пользователе,
+                    изменить права,заблокировать, либо же удалить.</p>
+
+                <p class="text-center"><a class="btn btn-primary" href="/user/doctors/index"> Пользователи &raquo;</a></p>
+            </div>
+            <div class="col-lg-4 col-md-4 lead text-justify">
+                <h2 class="text-center">Запись на прием</h2>
+
+                <p>В данной рубрике вы имеете возможность просмотреть журнал записей на прием, поиск по дате,
+                    изменить уже существующую запись, либо же удалить.</p>
+
+                <p class="text-center"><a class="btn btn-primary" href="/user/doctors/index"> Запись на прием &raquo;</a></p>
             </div>
         </div>
 

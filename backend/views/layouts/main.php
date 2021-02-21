@@ -4,12 +4,13 @@
 /* @var $content string */
 
 use backend\assets\AppAsset;
-use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
 use common\models\User;
+use yii\helpers\Html;
+
 
 AppAsset::register($this);
 ?>
@@ -32,47 +33,52 @@ AppAsset::register($this);
     <?php
     NavBar::begin([
         'brandLabel' => 'Главная',
-        'brandUrl' => ['/site/'],
+        'brandUrl' => ['/../site/'],
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
-    $menuItems = [
-        [
-            'label' => 'Пользователи',
-            'url' => ['/customers/index'],
-            'visible' => (!Yii::$app->user->isGuest)&&(User::isUserAdmin(Yii::$app->user->identity->username))
-        ],
-        [
-            'label' => 'Врачи',
-            'url' => ['/doctors/index'],
-            'visible' => (!Yii::$app->user->isGuest)&&(User::isUserAdmin(Yii::$app->user->identity->username)||User::isUserModer(Yii::$app->user->identity->username))
-        ],
-        [
-            'label' => 'Бланки',
-            'url' => ['/analysis-blank/index'],
-            'visible' => (!Yii::$app->user->isGuest)&&(User::isUserAdmin(Yii::$app->user->identity->username)||User::isUserModer(Yii::$app->user->identity->username))        ],
-        [
-            'label' => 'Нормы',
-            'url' => ['/analysis-standarts/index'],
-            'visible' => (!Yii::$app->user->isGuest)&&(User::isUserAdmin(Yii::$app->user->identity->username)||User::isUserModer(Yii::$app->user->identity->username))        ],
-        [
-            'label' => 'Новости',
-            'url' => ['/news/index'],
-            'visible' => (!Yii::$app->user->isGuest)&&(User::isUserAdmin(Yii::$app->user->identity->username)||User::isUserModer(Yii::$app->user->identity->username))        ],
-        [
-          'label' => 'Мой профиль',
-          'url' => ['/profile/index'],
-          'visible' => !Yii::$app->user->isGuest
-        ],
-    ];
+    if(!Yii::$app->user->isGuest) {
+        $menuItems = [
+            [
+                'label' => 'Пользователи',
+                'url' => ['/customers/index'],
+                'visible' => Yii::$app->user->identity->getRole() >= User::ROLE_MODER
+            ],
+            [
+                'label' => 'Врачи',
+                'url' => ['/doctors/index'],
+                'visible' => Yii::$app->user->identity->getRole() >= User::ROLE_MODER
+            ],
+            [
+                'label' => 'Бланки',
+                'url' => ['/analysis-blank/index'],
+                'visible' => Yii::$app->user->identity->getRole() >= User::ROLE_MODER
+            ],
+            [
+                'label' => 'Нормы',
+                'url' => ['/analysis-standarts/index'],
+                'visible' => Yii::$app->user->identity->getRole() >= User::ROLE_MODER
+            ],
+            [
+                'label' => 'Новости',
+                'url' => ['/news/index'],
+                'visible' => Yii::$app->user->identity->getRole() >= User::ROLE_MODER
+            ],
+            [
+                'label' => 'Запись на прием',
+                'url' => ['/record/index'],
+                'visible' => Yii::$app->user->identity->getRole() >= User::ROLE_MODER
+            ],
+        ];
+    }
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
+                'Logout (' . Yii::$app->user->identity->email. ')',
                 ['class' => 'btn btn-link logout']
             )
             . Html::endForm()

@@ -1,0 +1,137 @@
+<?php
+
+namespace backend\controllers;
+
+use Yii;
+use common\models\Animal;
+use backend\models\AnimalSearch;
+use backend\controllers\AdminController;
+use yii\web\Controller;
+use yii\web\NotFoundHttpException;
+use yii\filters\VerbFilter;
+
+/**
+ * AnimalsController implements the CRUD actions for Animal model.
+ */
+class AnimalsController extends AdminController
+{
+    /**
+     * @inheritdoc
+     */
+    public function behaviors()
+    {
+          $parentBehaviors = parent::behaviors();
+          $currentBehaviors = [
+              'verbs' => [
+                  'class' => VerbFilter::className(),
+                  'actions' => [
+                      'delete' => ['POST'],
+                  ],
+              ],
+          ];
+          return array_merge($parentBehaviors, $currentBehaviors);
+    }
+
+    /**
+     * Lists all Animal models.
+     * @return mixed
+     */
+    public function actionIndex()
+    {
+        $searchModel = new AnimalSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    /**
+     * Displays a single Animal model.
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionView($id)
+    {
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+        ]);
+    }
+
+    /**
+     * Creates a new Animal model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     * @return mixed
+     */
+    public function actionCreate()
+    {
+        $model = new Animal();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('create', [
+                'model' => $model,
+            ]);
+        }
+    }
+
+    /**
+     * Updates an existing Animal model.
+     * If update is successful, the browser will be redirected to the 'view' page.
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionUpdate($id)
+    {
+        $model = $this->findModel($id);
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('update', [
+                'model' => $model,
+            ]);
+        }
+    }
+
+    /**
+     * Deletes an existing Animal model.
+     * If deletion is successful, the browser will be redirected to the 'index' page.
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionDelete($id)
+    {
+        $this->findModel($id)->delete();
+
+        return $this->redirect(['index']);
+    }
+
+    /**
+     * Finds the Animal model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param integer $id
+     * @return Animal the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id)
+    {
+        if (($model = Animal::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+    public function accessRules()
+    {
+        return [
+            [
+                'allow' => true,
+                'actions' => ['create', 'update', 'index', 'view', 'delete'],
+                'roles' => ['@'],
+            ]
+        ];
+    }
+}

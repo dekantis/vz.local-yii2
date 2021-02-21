@@ -18,12 +18,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'id') ?>
 
     <?= $form->field($model, 'category_id') ?>
-
-    <?= $form->field($model, 'glucose_min') ?>
-
-    <?= $form->field($model, 'creatinine_min') ?>
-
-    <?= $form->field($model, 'alt_min') ?>
+    
 
     <?php // echo $form->field($model, 'ast_min') ?>
 

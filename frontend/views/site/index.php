@@ -18,7 +18,7 @@ $this->title = 'Главная';
                     <div class="carousel-caption">
                         <h3 class="lead text-primary">Прайс лист</h3>
                         <p>Стоимость услуг в наших лечебницах </p>
-                        <a href="site/price" class="btn btn-success btn-advanced">Подробнее</a>
+                        <a href="https://drive.google.com/file/d/1ATItRXIcLflLpTW1aUQ62PXmz0gyIsPx/view?usp=sharing" target="_blank" class="btn btn-success btn-advanced">Подробнее</a>
                     </div>
                 </div>
                 <div class="item item-2">
@@ -68,7 +68,7 @@ $this->title = 'Главная';
                 <!-- VK Widget -->
                 <center><div id="vk_groups"></div>
                 <script type="text/javascript">
-                    VK.Widgets.Group("vk_groups", {mode: 0, width: "320", height: "100"},  117177507);
+                    VK.Widgets.Group("vk_groups", {mode: 0, width: "300px", height: "75px"},  117177507);
                 </script></center>
             </p>
         </div>

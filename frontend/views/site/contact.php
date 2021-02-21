@@ -41,7 +41,20 @@
         </div>
         <div class="col-lg-8 col-md-8 text-center">
             <p class="lead"><h2>
-                <strong>Г. Новополоцк, ул. Новополоцк, д. 69</strong>
+                <strong>Г. Новополоцк, ул. Молодежная, д. 69</strong>
+            </h2></p>
+            <p class="lead">Контактный телефон: <strong>8-0214-520378</strong></p>
+        </div>
+    </div>
+    <div class="row block-border">
+        <div class="col-lg-4 col-md-4">
+            <div class="recomendation-block">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2258.0686441786393!2d28.66453661592193!3d55.53117358049462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x850715b234baa97f!2z0KfQktCj0J8g0JPQtdC70LAt0JLQtdGCICjQmtC-0LvQvtCx0L7Quik!5e0!3m2!1sru!2sby!4v1570037442550!5m2!1sru!2sby" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-8 text-center">
+            <p class="lead"><h2>
+                <strong>Г. Новополоцк, ул. Молодежная, д. 115а</strong>
             </h2></p>
             <p class="lead">Контактный телефон: <strong>8-0214-520378</strong></p>
         </div>

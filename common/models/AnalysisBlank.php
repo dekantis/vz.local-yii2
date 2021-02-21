@@ -34,13 +34,15 @@ class AnalysisBlank extends \yii\db\ActiveRecord
     const TYPE_CAT = 10;
     const TYPE_DOG = 20;
     const TYPE_RABIT = 30;
+    const TYPE_GOAT = 40;
 
     public static function getTypeList()
     {
         return [
             self::TYPE_CAT => 'Кошка',
             self::TYPE_DOG => 'Собака',
-            self::TYPE_RABIT => 'Кролик'
+            self::TYPE_RABIT => 'Кролик',
+            self::TYPE_GOAT => 'Коза',
         ];
     }
 

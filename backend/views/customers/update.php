@@ -5,9 +5,9 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\Doctor */
 
-$this->title = 'Редактировать данные пользователя: ' . $model->username;
+$this->title = 'Редактировать данные пользователя: ' . $model->email;
 $this->params['breadcrumbs'][] = ['label' => 'Пользователи', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->username, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = ['label' => $model->email, 'url' => ['view', 'id' => $id]];
 $this->params['breadcrumbs'][] = 'Редактировать';
 ?>
 <div class="customer-update">
@@ -16,6 +16,7 @@ $this->params['breadcrumbs'][] = 'Редактировать';
 
     <?= $this->render('_form', [
         'model' => $model,
+        'isNewRecord' => false
     ]) ?>
 
 </div>

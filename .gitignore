@@ -8,3 +8,4 @@ nbproject
 /docker-compose.override.yml
 /.idea
 /web
+/storage

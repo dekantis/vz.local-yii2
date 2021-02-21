@@ -20,6 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
+        <?= Html::a('Добавить бланк анализов', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <div class="analysis-blank-view">

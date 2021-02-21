@@ -1,0 +1,14 @@
+version: '2'
+services:
+    php-cli:
+        build:
+            args:
+              - GITHUB_OAUTH_TOKEN={...}
+    nginx:
+        ports:
+            - 127.0.10.1:80:80
+        environment:
+            - DOMAIN=acc.vz.local
+    phpmyadmin:
+        ports:
+         - 8080:80
