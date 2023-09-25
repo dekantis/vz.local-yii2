@@ -25,7 +25,9 @@ services:
                 - ./docker/nginx/vhost.conf:/tmp/vhost.conf
                 - ./:/app
                 - ./docker/logs:/log
-        command: /bin/sh -c "envsubst '$$DOMAIN ' < /tmp/vhost.conf > /etc/nginx/conf.d/vhost.conf  && nginx -g 'daemon off;'"
+        ports:
+            - "80:80"
+        command: /bin/sh -c "envsubst 'vz.local ' < /tmp/vhost.conf > /etc/nginx/conf.d/vhost.conf  && nginx -g 'daemon off;'"
 
     mysql:
         build: docker/mysql
@@ -36,10 +38,7 @@ services:
         ports:
             - 127.0.0.1:3306:3306
         command: [mysqld, --character-set-server=utf8, --collation-server=utf8_unicode_ci]
-    phpmyadmin:
-        image: phpmyadmin/phpmyadmin
-        links:
-            - mysql:db
+
 volumes:
     mysql-data:
         driver: local

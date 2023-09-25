@@ -40,6 +40,7 @@ RUN if [ ${GITHUB_OAUTH_TOKEN} != false ]; then \
     composer config -g github-oauth.github.com ${GITHUB_OAUTH_TOKEN} \
 ;fi
 
+RUN composer self-update --1
 RUN composer global require "fxp/composer-asset-plugin:^1.3.1"
 
 RUN apk add --no-cache nodejs nodejs-npm
