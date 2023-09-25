@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM alpine:3.15.4
 
 RUN apk add --no-cache php7-fpm \
     php7-bcmath \

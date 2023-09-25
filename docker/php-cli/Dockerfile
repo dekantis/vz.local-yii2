@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM alpine:3.15.4
 
 RUN apk add --no-cache php7 \
     php7-bcmath \
@@ -43,7 +43,7 @@ RUN if [ ${GITHUB_OAUTH_TOKEN} != false ]; then \
 RUN composer self-update --1
 RUN composer global require "fxp/composer-asset-plugin:^1.3.1"
 
-RUN apk add --no-cache nodejs nodejs-npm
+RUN apk add --no-cache nodejs npm
 
 RUN npm install -g less less-plugin-clean-css raml2html
 
