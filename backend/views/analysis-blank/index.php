@@ -3,9 +3,14 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+use common\models\Doctor;
+use yii\helpers\ArrayHelper;
+use common\grid\EnumColumn;
 
 $this->title = 'Бланки анализов';
 $this->params['breadcrumbs'][] = $this->title;
+
+$doctors = ArrayHelper::map(Doctor::find()->all(), 'id', 'fullname');
 ?>
 <div class="analysis-blank-index">
 
@@ -15,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('Добавить бланк анализов', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-<?php Pjax::begin(); ?>    <?= GridView::widget([
+    <?php Pjax::begin(); ?>    <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
@@ -25,12 +30,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'animal_name',
             'keeper',
             [
-            'attribute' => 'doctor_id',
-             'value' => function ($model) {
-                 return $model->doctor->name . ' '
-                    . $model->doctor->lastname . ' '
-                    . $model->doctor->patronymic;
-             },
+                'class' => EnumColumn::class,
+                'attribute' => 'doctor_id',
+                'value' => 'doctor.fullname',
+                'enum' => $doctors,
+                'contentOptions' => ['class' => 'hidden-xs'],
+                'headerOptions'  => ['class' => 'hidden-xs'],
             ],
             // 'glucose',
             // 'creatinine',
@@ -43,11 +48,16 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'total_bilirubin',
             // 'alkaline_phosphatase',
             // 'phosphorus',
-            'date_publication:datetime',
+            [
+                'attribute'      => 'date_publication',
+                'format' => ['date', 'php:d.m.Y'],
+                'contentOptions' => ['class' => 'hidden-xs'],
+                'headerOptions'  => ['class' => 'hidden-xs'],
+            ],
             // 'medical_mark:ntext',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
-<?php Pjax::end(); ?>
+    <?php Pjax::end(); ?>
 </div>

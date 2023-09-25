@@ -6,3 +6,10 @@ RewriteCond %{REQUEST_FILENAME} !-d
 
 # в противном случае перенаправляем на index.php
 RewriteRule . index.php
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Сделайте пакет «ea-php56» языком программирования «PHP» по умолчанию.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php56 .php .php5 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

@@ -20,6 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
+        <?= Html::a('Добавить бланк анализов', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <div class="analysis-blank-view">
@@ -52,6 +53,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 <th>Результат</th>
                 <th colspan="2">Норма</th>
                 <th colspan="2">Единицы измерения</th>
+            </tr>
+            <tr>
+                <th>Альбумин</th>
+                <td><?=$blank->albumen?></td>
+                <td colspan="2"><?=$standart->albumen_min?>-<?=$standart->albumen_max?></td>
+                <td colspan="2">г/л</td>
             </tr>
             <tr>
                 <th>Общий белок</th>

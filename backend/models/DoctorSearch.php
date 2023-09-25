@@ -18,7 +18,7 @@ class DoctorSearch extends Doctor
     public function rules()
     {
         return [
-            [['id', 'specialisation_id', 'avatar_id'], 'integer'],
+            [['id', 'specialisation_id'], 'integer'],
             [['name', 'lastname', 'patronymic'], 'safe'],
         ];
     }
@@ -61,7 +61,6 @@ class DoctorSearch extends Doctor
         $query->andFilterWhere([
             'id' => $this->id,
             'specialisation_id' => $this->specialisation_id,
-            'avatar_id' => $this->avatar_id,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])

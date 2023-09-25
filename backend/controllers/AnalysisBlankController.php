@@ -135,7 +135,7 @@ class AnalysisBlankController extends UserController
         if (($model = AnalysisBlank::findOne($id)) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
+            throw new NotFoundHttpException('Страница не существует!');
         }
     }
 
@@ -147,7 +147,7 @@ class AnalysisBlankController extends UserController
                 'actions' => ['create', 'update', 'index', 'view', 'delete'],
                 'roles' => ['@'],
                 'matchCallback' => function ($rule, $action) {
-                    return (User::isUserAdmin(Yii::$app->user->identity->username)||User::isUserModer(Yii::$app->user->identity->username));
+                    return Yii::$app->user->identity->getRole() >= User::ROLE_MODER;
                 }
             ]
         ];

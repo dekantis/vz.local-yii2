@@ -22,9 +22,16 @@ $this->title = 'Анализы'
         'keeper',
         [
             'attribute' => 'doctor.fullName',
-            'label' => 'Доктор'
+            'label' => 'Доктор',
+            'contentOptions' => ['class' => 'hidden-xs'],
+            'headerOptions'  => ['class' => 'hidden-xs'],
         ],
-        'date_publication:datetime',
+        [
+            'attribute'      => 'date_publication',
+            'format' => ['date', 'php:d.m.Y'],
+            'contentOptions' => ['class' => 'hidden-xs'],
+            'headerOptions'  => ['class' => 'hidden-xs'],
+        ],
     ],
 ]);
 

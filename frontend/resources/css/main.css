@@ -1,31 +1,42 @@
 @charset "UTF-8";
 /*BASE - Base styles, variables, mixins, etc*/
+
 /*Font Colors*/
+
 /*Background Colors*/
+
 /*Showcase Area*/
+
 /* line 1, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/base/_text.scss */
+
 .lead {
   margin: 2%;
 }
 
 /*Отступ после слайдера*/
+
 /* line 5, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/base/_text.scss */
+
 .main {
   margin-top: 70px;
 }
 
 /*Mixins*/
+
 /* line 1, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/base/_normalize.scss */
+
 .text-indent {
   text-indent: 20px;
 }
 
 /* line 4, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/base/_normalize.scss */
+
 .avatar {
   width: 140px;
 }
 
 /* line 1, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/base/_hightext.scss */
+
 .lead h1, h2, h4, h5, h6 {
   color: #286090;
   padding-bottom: 9px;
@@ -35,8 +46,11 @@
 }
 
 /*LAYOUTS - Page layout styles*/
+
 /*Navbar*/
+
 /* line 2, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/layouts/_nav.scss */
+
 .navbar {
   width: 100%;
   margin: auto;
@@ -49,6 +63,7 @@
 }
 
 /* line 10, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/layouts/_nav.scss */
+
 .navbar a {
   color: #4169E0 !important;
   font-size: 20px;
@@ -56,27 +71,43 @@
   padding-bottom: 24px !important;
   padding-top: 20px !important;
 }
+.navbar li.active > a {
+  color: #e4eef2 !important;
+}
 
 /* line 18, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/layouts/_nav.scss */
-.navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
+
+.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
   background: #4169E0 !important;
   color: #fff !important;
 }
 
 /* line 22, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/layouts/_nav.scss */
+
 .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
   background: #fff !important;
   color: #4169E0 !important;
 }
 
 /* line 26, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/layouts/_nav.scss */
+
 .navbar-inverse .navbar-toggle .icon-bar {
   background: #4169E0;
   color: #ffffff;
 }
 
+.navbar-nav {
+  float: none;
+}
+
+.navbar-nav li:last-child {
+  float: right;
+}
+
 /*Footer*/
+
 /* line 2, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/layouts/_footer.scss */
+
 .footer-main {
   background: #333333;
   color: #ffffff;
@@ -88,6 +119,7 @@
 }
 
 /* line 8, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/layouts/_footer.scss */
+
 .footer-main a {
   color: #ffffff;
 }
@@ -116,11 +148,11 @@
     margin: 7.5px -15px;
   }
   /* line 19, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/layouts/_mobile.scss */
-  .navbar-nav > li {
+  .navbar-nav>li {
     float: none;
   }
   /* line 22, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/layouts/_mobile.scss */
-  .navbar-nav > li > a {
+  .navbar-nav>li>a {
     padding-top: 10px;
     padding-bottom: 10px;
   }
@@ -141,8 +173,11 @@
 }
 
 /*Модули (каруселька, табы и тд)*/
+
 /*Каруселька*/
+
 /* line 2, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_components.scss */
+
 .carousel .carousel-inner .item {
   padding-top: 100px;
   height: 53vh;
@@ -152,6 +187,7 @@
 }
 
 /* line 9, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_components.scss */
+
 .carousel .carousel-inner .item-1 {
   background-image: url(/img/price.jpg);
   padding: 3px;
@@ -159,6 +195,7 @@
 }
 
 /* line 14, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_components.scss */
+
 .carousel .carousel-inner .item-2 {
   background-image: url(/img/map.png);
   padding: 3px;
@@ -166,6 +203,7 @@
 }
 
 /* line 19, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_components.scss */
+
 .carousel .carousel-inner .item-3 {
   background-image: url(/img/new.jpg);
   padding: 3px;
@@ -173,6 +211,7 @@
 }
 
 /* line 24, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_components.scss */
+
 .carousel .carousel-inner .item-4 {
   background-image: url(/img/news.jpg);
   padding: 3px;
@@ -180,24 +219,29 @@
 }
 
 /* line 29, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_components.scss */
+
 .carousel-caption {
   background: rgba(0, 0, 0, 0.65);
 }
 
 /* line 32, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_components.scss */
+
 td {
   vertical-align: middle;
   text-align: center;
 }
 
 /* line 36, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_components.scss */
+
 th {
   vertical-align: middle;
   text-align: center;
 }
 
 /*Blocks*/
+
 /* line 2, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_blocks.scss */
+
 .block-border {
   border: 2px solid #4169E0;
   -moz-border-radius: 10px;
@@ -209,62 +253,73 @@ th {
 }
 
 /* line 9, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_blocks.scss */
+
 .block, .block-primary, .block-secondary, .block-light, .block-dark {
   padding: 15px;
   margin-bottom: 15px;
 }
 
 /* line 12, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_blocks.scss */
+
 .block h3, .block-primary h3, .block-secondary h3, .block-light h3, .block-dark h3 {
   margin-top: 0;
   padding-top: 0;
 }
 
 /* line 16, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_blocks.scss */
+
 .block iframe, .block-primary iframe, .block-secondary iframe, .block-light iframe, .block-dark iframe {
   width: 100%;
 }
 
 /* line 20, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_blocks.scss */
+
 .block-primary {
   background: #4169E0;
   color: #ffffff;
 }
 
 /* line 24, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_blocks.scss */
+
 .block-secondary {
   background: #7fba00;
   color: #ffffff;
 }
 
 /* line 28, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_blocks.scss */
+
 .block-light {
   background: #e4eef2;
   color: #666666;
 }
 
 /* line 32, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_blocks.scss */
+
 .block-dark {
   background: #333333;
   color: #ffffff;
 }
 
 /* line 36, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_blocks.scss */
+
 .block-center {
   text-align: center !important;
 }
 
 /* line 39, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_blocks.scss */
+
 .block-image img {
   width: 100%;
 }
 
 /* line 44, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_blocks.scss */
+
 .block-border {
   border: 1px solid #cccccc;
 }
 
 /* line 48, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_blocks.scss */
+
 .block-primary-head h3 {
   padding: 15px 5px 15px 10px;
   background: #4169E0;
@@ -274,18 +329,21 @@ th {
 }
 
 /* line 54, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_blocks.scss */
+
 .block-primary-head .block-content {
   border: 1px solid #4169E0;
   padding: 10px;
 }
 
 /* line 60, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_blocks.scss */
+
 .block-icon h3 {
   padding: 0;
   margin: 0;
 }
 
 /* line 64, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_blocks.scss */
+
 .block-icon .icon {
   float: left;
   width: 20%;
@@ -293,18 +351,21 @@ th {
 }
 
 /* line 69, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_blocks.scss */
+
 .block-icon .icon-content {
   float: left;
   width: 70%;
 }
 
 /* line 74, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_blocks.scss */
+
 .block-border {
   border: 3px solid #cccccc;
   margin-bottom: 10px;
 }
 
 /* line 78, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_blocks.scss */
+
 .block-news-footer {
   background: #f0f3fd;
   color: #ffffff;
@@ -315,26 +376,31 @@ th {
 }
 
 /* line 83, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_blocks.scss */
+
 .block-news-footer p {
   color: #333333;
 }
 
 /* line 86, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_blocks.scss */
+
 .block-news-footer a {
   color: #4169E0;
 }
 
 /* line 90, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_blocks.scss */
+
 .block-news-footer button {
   margin-bottom: 10px;
 }
 
 /* line 93, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_blocks.scss */
+
 .block-news-footer .block-href-news a {
   color: #4169E0;
 }
 
 /* line 95, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_blocks.scss */
+
 .recomendation-block {
   justify-content: center;
   /*центрируем элемент по горизонтали */
@@ -352,32 +418,39 @@ th {
 }
 
 /* line 105, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_blocks.scss */
+
 .recomendation-block iframe {
   width: auto;
 }
 
 /*Фиксациая слева*/
+
 /* line 110, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_blocks.scss */
+
 .fixed {
   position: fixed;
 }
 
 /* line 113, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_blocks.scss */
+
 .block-vk {
   margin-top: 3%;
 }
 
 /* line 117, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_blocks.scss */
+
 .tr-click:hover {
   cursor: pointer;
 }
 
 /* line 1, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_img.scss */
+
 .lead img {
   width: 100%;
 }
 
 /* line 4, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_img.scss */
+
 .img-news {
   text-align: center;
   max-height: 600px;
@@ -386,6 +459,7 @@ th {
 }
 
 /* line 10, /home/dekantis/projects/vz.local-yii2/frontend/resources/scss/models/_img.scss */
+
 .img-admin-index {
   text-align: center;
   max-height: 400px;

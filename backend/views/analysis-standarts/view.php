@@ -15,11 +15,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Редактировать', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Удалить', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Вы уверены, что хотите удалить запись?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -41,6 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'total_bilirubin_min',
             'alkaline_phosphatase_min',
             'phosphorus_min',
+            'albumen_min',
             'glucose_max',
             'creatinine_max',
             'alt_max',
@@ -60,6 +61,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'cholesterol_max',
             'mg_max',
             'ldg_max',
+            'albumen_max'
         ],
     ]) ?>
 

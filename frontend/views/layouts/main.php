@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use frontend\assets\AppAsset;
+use common\widgets\Alert;
 
 AppAsset::register($this);
 ?>
@@ -23,6 +24,7 @@ AppAsset::register($this);
       <?= $this->render('_header')?>
     </header>
     <div class="container main block-border">
+        <?= Alert::widget() ?>
         <?= $content ?>
     </div>
     <footer class="footer-main">

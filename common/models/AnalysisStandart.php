@@ -52,7 +52,7 @@ class AnalysisStandart extends \yii\db\ActiveRecord
         return [
             [['category_id', 'glucose_min', 'creatinine_min', 'alt_min', 'ast_min', 'urea_min', 'lamilaza_min', 'calcium_min', 'total_protein_min', 'total_bilirubin_min', 'alkaline_phosphatase_min', 'phosphorus_min', 'glucose_max', 'creatinine_max', 'alt_max', 'ast_max', 'urea_max', 'lamilaza_max', 'calcium_max', 'total_protein_max', 'total_bilirubin_max', 'alkaline_phosphatase_max', 'phosphorus_max'], 'required'],
             [['category_id'], 'integer'],
-            [['ggt_min', 'cholesterol_min', 'ldg_min', 'mg_min', 'ggt_max', 'cholesterol_max', 'ldg_max', 'mg_max', 'glucose_min', 'creatinine_min', 'alt_min', 'ast_min', 'urea_min', 'lamilaza_min', 'calcium_min', 'total_protein_min', 'total_bilirubin_min', 'alkaline_phosphatase_min', 'phosphorus_min', 'glucose_max', 'creatinine_max', 'alt_max', 'ast_max', 'urea_max',
+            [['albumen_max', 'albumen_min', 'ggt_min', 'cholesterol_min', 'ldg_min', 'mg_min', 'ggt_max', 'cholesterol_max', 'ldg_max', 'mg_max', 'glucose_min', 'creatinine_min', 'alt_min', 'ast_min', 'urea_min', 'lamilaza_min', 'calcium_min', 'total_protein_min', 'total_bilirubin_min', 'alkaline_phosphatase_min', 'phosphorus_min', 'glucose_max', 'creatinine_max', 'alt_max', 'ast_max', 'urea_max',
              'lamilaza_max', 'calcium_max', 'total_protein_max', 'total_bilirubin_max', 'alkaline_phosphatase_max', 'phosphorus_max'], 'number'],
             // [['animal_id'], 'exist', 'skipOnError' => true, 'targetClass' => Animal::className(), 'targetAttribute' => ['animal_id' => 'id']],
         ];
@@ -77,6 +77,7 @@ class AnalysisStandart extends \yii\db\ActiveRecord
             'total_bilirubin_min' => 'Общий билирубин мин',
             'alkaline_phosphatase_min' => 'Щелочная фосфатаза мин',
             'phosphorus_min' => 'Фосфор мин',
+            'albumen_min' => 'Альбумин мин',
             'glucose_max' => 'Глюкоза макс',
             'creatinine_max' => 'Креатинин макс',
             'alt_max' => 'Алт макс',
@@ -95,7 +96,8 @@ class AnalysisStandart extends \yii\db\ActiveRecord
             'ggt_max' => 'ГГТ макс.',
             'cholesterol_max' => 'Холестерин макс.',
             'ldg_max' => 'ЛДГ макс.',
-            'mg_max' => 'Магний макс.'
+            'mg_max' => 'Магний макс.',
+            'albumen_max' => 'Альбумин макс.'
         ];
     }
 

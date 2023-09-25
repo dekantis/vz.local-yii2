@@ -2,14 +2,12 @@
 
 namespace backend\controllers;
 
+use backend\forms\UserForm;
 use Yii;
 use common\models\User;
 use backend\models\CustomerSearch;
-use backend\controllers\UserController;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\helpers\ArrayHelper;
-use yii\web\UploadedFile;
 
 /**
  * AnalysisBlankController implements the CRUD actions for AnalysisBlank model.
@@ -69,15 +67,10 @@ class CustomersController extends UserController
      */
     public function actionCreate()
     {
-        $model = new CustomerSearch();
+        $model = new UserForm();
 
-        if ($model->load(Yii::$app->request->post())) {
-            $model->setPassword($model->password_hash);
-            $model->generateAuthKey();
-            if ($model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
-            }
-            var_dump($model->getErrors());
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['index']);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -85,47 +78,21 @@ class CustomersController extends UserController
         }
     }
 
-    /**
-     * Updates an existing AnalysisBlank model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
-     */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
+        $model = new UserForm([], $this->findModel($id));
 
         if ($model->load(Yii::$app->request->post())) {
             if ($model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+                return $this->redirect(['view', 'id' => $id]);
             }
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'id' => $id
             ]);
         }
     }
-
-    /**
-     * Deletes an existing AnalysisBlank model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     */
-    public function actionDelete($id)
-    {
-        $this->findModel($id)->delete();
-
-        return $this->redirect(['index']);
-    }
-
-    /**
-     * Finds the AnalysisBlank model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return AnalysisBlank the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
     protected function findModel($id)
     {
         if (($model = User::findOne($id)) !== null) {
@@ -143,9 +110,9 @@ class CustomersController extends UserController
                 'actions' => ['create', 'update', 'index', 'view', 'delete'],
                 'roles' => ['@'],
                 'matchCallback' => function ($rule, $action) {
-                    return (User::isUserAdmin(Yii::$app->user->identity->username));
+                    return Yii::$app->user->identity->getRole() >= User::ROLE_MODER;
                 }
-            ]
+            ],
         ];
     }
 }

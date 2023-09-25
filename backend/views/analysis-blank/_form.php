@@ -21,6 +21,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'doctor_id')->radioList($doctorList) ?>
 
     <?= $form->field($model, 'total_protein')->textInput() ?>
+    
+    <?= $form->field($model, 'albumen')->textInput() ?>
 
     <?= $form->field($model, 'creatinine')->textInput() ?>
 
