@@ -6,7 +6,7 @@ use yii\web\AssetBundle;
 
 class FontAwesomeAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/npm/font-awesome';
+    public $sourcePath = '@vendor/npm-asset/font-awesome';
     public $baseUrl = '@web';
     public $css = [
         'css/font-awesome.css',

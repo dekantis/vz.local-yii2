@@ -22,10 +22,11 @@ RUN apk add --no-cache php7 \
     php7-zlib \
     php7-dom \
     php7-fileinfo \
+    php7-xmlwriter \
     && rm -rf /var/cache/apk/*
 
-COPY php.ini /etc/php7/conf.d/50-setting.ini
-
+COPY 50-setting.ini /etc/php7/conf.d/50-setting.ini
+COPY php.ini /etc/php7/php.ini
 #Install composer
 
 RUN apk add --no-cache git curl \

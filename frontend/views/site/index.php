@@ -3,58 +3,51 @@ $this->title = 'Главная';
 ?>
 <div class="row">
     <div class="text-center">
-        <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
-            <!-- Carousel indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-                <li data-target="#myCarousel" data-slide-to="3"></li>
-            </ol>
-            <!-- Carousel items -->
+        <div id="myCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
             <div class="carousel-inner">
-                <div class="item item-1 active">
-                    <!-- <img src="images/slide1.png" alt="First Slide"> -->
-                    <div class="carousel-caption">
-                        <h3 class="lead text-primary">Прайс лист</h3>
-                        <p>Стоимость услуг в наших лечебницах </p>
-                        <a href="https://drive.google.com/file/d/1ATItRXIcLflLpTW1aUQ62PXmz0gyIsPx/view?usp=sharing" target="_blank" class="btn btn-success btn-advanced">Подробнее</a>
+                <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="/img/price.jpg" class="d-block w-100" alt="Price">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
                     </div>
                 </div>
-                <div class="item item-2">
-                    <!-- <img src="images/slide2.png" alt="Second Slide"> -->
-                    <div class="carousel-caption">
-                        <h3 class="lead text-primary">Наши контанкты</h3>
-                        <p>Где и как нас найти?</p>
-                        <a href="site/contact" class="btn btn-success btn-advanced">Подробнее</a>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="/img/map.png" class="d-block w-100" alt="Map">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Second slide label</h5>
+                        <p>Some representative placeholder content for the second slide.</p>
                     </div>
                 </div>
-                <div class="item item-3">
-                    <!-- <img src="images/slide3.png" alt="Third Slide"> -->
-                    <div class="carousel-caption">
-                        <h3  class="lead text-primary">Анализы крови</h3>
-                        <p>Знайте больше о состоянии вашего любимца
-                        </p>
-                        <a href="/analysis/" class="btn btn-success btn-advanced">Подробнее</a>
+                <div class="carousel-item">
+                    <img src="/img/news.jpg" class="d-block w-100" alt="News">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Some representative placeholder content for the third slide.</p>
                     </div>
                 </div>
-                <div class="item item-4">
-                    <!-- <img src="images/slide3.png" alt="Third Slide"> -->
-                    <div class="carousel-caption">
-                        <h3  class="lead text-primary">Новости</h3>
-                        <p>Объявления и новости нашего ресурса
-                        </p>
-                        <a href="/news/" class="btn btn-success btn-advanced">Подробнее</a>
+                <div class="carousel-item">
+                    <img src="/img/new.jpg" class="d-block w-100" alt="New">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Fourth slide label</h5>
+                        <p>Some representative placeholder content for the third slide.</p>
                     </div>
                 </div>
             </div>
-            <!-- Carousel nav -->
-            <a class="carousel-control left" href="#myCarousel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-            <a class="carousel-control right" href="#myCarousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </div>
 </div>

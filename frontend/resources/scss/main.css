@@ -120,8 +120,13 @@
 }
 /*Модули (каруселька, табы и тд)*/
 /*Каруселька*/
+.carousel {
+  display: none;
+}
+
 .carousel .carousel-inner .carousel-item {
-  padding-top: 20px;
+  padding-top: 100px;
+  height: 53vh;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
