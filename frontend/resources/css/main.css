@@ -99,19 +99,21 @@
     float: none !important;
     margin: 7.5px -15px;
   }
-  .navbar-nav > li {
+  .navbar-nav li {
     float: none;
   }
-  .navbar-nav > li > a {
-    padding-top: 10px;
-    padding-bottom: 10px;
+  .navbar-nav li a {
+    padding: 10px 15px;
+  }
+  .navbar-nav li.login {
+    text-align: right;
   }
   .navbar-text {
     float: none;
     margin: 15px 0;
   }
   /* since 3.1.0 */
-  .navbar-collapse.collapse.in {
+  .navbar-collapse.collapse.show {
     display: block !important;
   }
   .collapsing {

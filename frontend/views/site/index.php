@@ -52,10 +52,10 @@ $this->title = 'Главная';
     </div>
 </div>
 <div class="row">
-    <div class="col-md-4 col-lg-4">
+    <div class="col-md-6 col-lg-4">
         <div class="block-vk text-center">
             <a href="https://vk.com/vetzooland">
-                <img class="img-responsive text-center" alt="Какое-то название" src="/img/vk.png">
+                <img class="stack-Img img-fluid" alt="Какое-то название" src="/img/vk.png">
             </a>
             <p><script type="text/javascript" src="//vk.com/js/api/openapi.js?146"></script>
                 <!-- VK Widget -->
@@ -66,7 +66,7 @@ $this->title = 'Главная';
             </p>
         </div>
     </div>
-    <div class="col-md-8 col-lg-8">
+    <div class="col-md-6 col-lg-8">
         <p class="lead"><h2 class="text-center"><strong>Здравствуйте!</strong></h2></p>
         <p class="text-indent text-justify lead">
             Здесь помогают тем, кто тысячи лет верно служит человеку, разделяя с ним очаг и кров.

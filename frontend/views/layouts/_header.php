@@ -6,9 +6,6 @@ use common\models\Settings;
 
 NavBar::begin([
     'brandLabel' => 'ВЕТЗООЛЭНД',
-    'options' => [
-        'class' => 'navbar navbar-inverse navbar-fixed-top'
-    ]
 ]);
 
 $isRecordAvailable = Settings::getValue('isRecordAvailable');
@@ -42,7 +39,11 @@ $menuItems = [
     ],
 ];
 if (Yii::$app->user->isGuest) {
-    $menuItems[] = ['label' => 'Авторизация', 'url' => ['/site/login']];
+    $menuItems[] = [
+        'label' => 'Авторизация',
+        'url' => ['/site/login'],
+        'options' => ['class' => 'login'],
+    ];
 } else {
     $menuItems[] = [
         'label' => 'Личный кабинет',
@@ -74,3 +75,4 @@ echo Nav::widget([
 ]);
 
 NavBar::end();
+
