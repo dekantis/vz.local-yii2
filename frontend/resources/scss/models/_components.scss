@@ -1,5 +1,6 @@
 /*Каруселька*/
 .carousel .carousel-inner .carousel-item {
+  height: 53vh;
   padding-top: 20px;
   background-size: cover;
   background-position: center center;
@@ -16,17 +17,20 @@
   @include add-border(3px,#cccccc,all);
 }
 .carousel .carousel-inner .item-3 {
-  background-image: url(/img/new.jpg);
+  background-image: url(/img/news.jpg);
   padding: 3px;
   @include add-border(3px,#cccccc,all);
 }
 .carousel .carousel-inner .item-4 {
-  background-image: url(/img/news.jpg);
+  background-image: url(/img/new.jpg);
   padding: 3px;
   @include add-border(3px,#cccccc,all);
 }
 .carousel-caption {
     background: rgba(0,0,0, 0.65);
+    h5 {
+      color:#3595e8;
+    }
 }
 td {
   vertical-align: middle;

@@ -35,7 +35,7 @@ $menuItems = [
     [
         'label' => 'Запись на прием',
         'url' => ['site/record'],
-        'visible' => $isRecordAvailable == 'true'
+        'visible' => $isRecordAvailable === 'true'
     ],
 ];
 if (Yii::$app->user->isGuest) {
@@ -75,4 +75,5 @@ echo Nav::widget([
 ]);
 
 NavBar::end();
+?>
 

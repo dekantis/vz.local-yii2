@@ -3,7 +3,7 @@ $this->title = 'Главная';
 ?>
 <div class="row">
     <div class="text-center">
-        <div id="myCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -11,32 +11,32 @@ $this->title = 'Главная';
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
             </div>
             <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="10000">
-                    <img src="/img/price.jpg" class="d-block w-100" alt="Price">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
+                <div class="carousel-item item-1 active" data-bs-interval="10000">
+                    <div class="carousel-caption">
+                        <h5>Прайс лист</h5>
+                        <p>Стоимость услуг в наших лечебницах.</p>
+                        <a href="https://drive.google.com/file/d/1ATItRXIcLflLpTW1aUQ62PXmz0gyIsPx/view?usp=sharing" target="_blank" class="btn btn-success btn-advanced">Подробнее</a>
                     </div>
                 </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                    <img src="/img/map.png" class="d-block w-100" alt="Map">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
+                <div class="carousel-item item-2" data-bs-interval="2000">
+                    <div class="carousel-caption">
+                        <h5>Наши контанкты</h5>
+                        <p>Где и как нас найти?</p>
+                        <a href="site/contact" class="btn btn-success btn-advanced">Подробнее</a>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="/img/news.jpg" class="d-block w-100" alt="News">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
+                <div class="carousel-item item-3">
+                    <div class="carousel-caption">
+                        <h5>Новости</h5>
+                        <p>Объявления и новости нашего ресурса.</p>
+                        <a href="/news/" class="btn btn-success btn-advanced">Подробнее</a>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="/img/new.jpg" class="d-block w-100" alt="New">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Fourth slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
+                <div class="carousel-item item-4">
+                    <div class="carousel-caption">
+                        <h5>Анализы крови</h5>
+                        <p>Знайте больше о состоянии вашего любимца/</p>
+                        <a href="/analysis/" class="btn btn-success btn-advanced">Подробнее</a>
                     </div>
                 </div>
             </div>
@@ -67,11 +67,13 @@ $this->title = 'Главная';
         </div>
     </div>
     <div class="col-md-6 col-lg-8">
-        <p class="lead"><h2 class="text-center"><strong>Здравствуйте!</strong></h2></p>
-        <p class="text-indent text-justify lead">
-            Здесь помогают тем, кто тысячи лет верно служит человеку, разделяя с ним очаг и кров.
-            Тем, кто преданно смотрит Вам в глаза в минуты печали и неутолимо резвится в дни радости. Здесь лечат животных!
-        </p>
+        <div class="lead text-justify text-indent">
+            <h2 class="text-center"><strong>Здравствуйте!</strong></h2>
+            <p>
+                Здесь помогают тем, кто тысячи лет верно служит человеку, разделяя с ним очаг и кров.
+                Тем, кто преданно смотрит Вам в глаза в минуты печали и неутолимо резвится в дни радости. Здесь лечат животных!
+            </p>
+        </div>
     </div>
 </div>
 <div class="row">

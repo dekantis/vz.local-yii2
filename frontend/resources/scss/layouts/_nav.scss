@@ -19,6 +19,17 @@
             color: #e4eef2 !important;
         }
     }
+    .navbar-collapse {
+        justify-content: right;
+    }
+    .nav-item {
+        border-right: 1px solid #eeeeee;
+        border-top: 1px solid #eeeeee;
+    }
+    .nav-item:first-child {
+        border-left: 1px solid #eeeeee;
+        border-right: none;
+    }
 }
 .navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
     background: $primary-color !important;

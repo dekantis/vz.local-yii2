@@ -4,17 +4,15 @@
 /*Background Colors*/
 /*Showcase Area*/
 .lead {
-  margin: 2%;
-}
-
-/*Отступ после слайдера*/
-.main {
-  margin-top: 70px;
+  padding: 2%;
 }
 
 /*Mixins*/
 .text-indent {
   text-indent: 20px;
+}
+.text-indent p {
+  text-align: justify;
 }
 
 .avatar {
@@ -24,7 +22,7 @@
 .lead h1, h2, h4, h5, h6 {
   color: #286090;
   padding-bottom: 9px;
-  margin: 40px 0 20px;
+  margin: 0 0 20px;
   border-bottom: 1px solid #eee;
   text-align: center;
 }
@@ -50,6 +48,17 @@
 }
 .navbar li.active a {
   color: #e4eef2 !important;
+}
+.navbar .navbar-collapse {
+  justify-content: right;
+}
+.navbar .nav-item {
+  border-right: 1px solid #eeeeee;
+  border-top: 1px solid #eeeeee;
+}
+.navbar .nav-item:first-child {
+  border-left: 1px solid #eeeeee;
+  border-right: none;
 }
 
 .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
@@ -105,7 +114,7 @@
   .navbar-nav li a {
     padding: 10px 15px;
   }
-  .navbar-nav li.login {
+  .navbar-nav li:last-child {
     text-align: right;
   }
   .navbar-text {
@@ -123,6 +132,7 @@
 /*Модули (каруселька, табы и тд)*/
 /*Каруселька*/
 .carousel .carousel-inner .carousel-item {
+  height: 53vh;
   padding-top: 20px;
   background-size: cover;
   background-position: center center;
@@ -142,19 +152,22 @@
 }
 
 .carousel .carousel-inner .item-3 {
-  background-image: url(/img/new.jpg);
+  background-image: url(/img/news.jpg);
   padding: 3px;
   border: 3px solid #cccccc;
 }
 
 .carousel .carousel-inner .item-4 {
-  background-image: url(/img/news.jpg);
+  background-image: url(/img/new.jpg);
   padding: 3px;
   border: 3px solid #cccccc;
 }
 
 .carousel-caption {
   background: rgba(0, 0, 0, 0.65);
+}
+.carousel-caption h5 {
+  color: #3595e8;
 }
 
 td {
