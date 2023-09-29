@@ -1,10 +1,11 @@
 <?php
 
+use yii\data\ActiveDataProvider;
 use yii\grid\GridView;
 use yii\helpers\Url;
 
-$this->title = 'Анализы'
-
+/** @var ActiveDataProvider $dataProvider */
+$this->title = 'Анализы';
 ?>
 
 <?= GridView::widget([

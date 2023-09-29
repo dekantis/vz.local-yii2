@@ -23,12 +23,7 @@
         justify-content: right;
     }
     .nav-item {
-        border-right: 1px solid #eeeeee;
-        border-top: 1px solid #eeeeee;
-    }
-    .nav-item:first-child {
-        border-left: 1px solid #eeeeee;
-        border-right: none;
+        border: 1px solid #eeeeee;
     }
 }
 .navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {

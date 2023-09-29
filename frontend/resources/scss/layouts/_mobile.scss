@@ -37,3 +37,13 @@
         overflow: hidden!important;
     }
 }
+@media (min-width: 992px) {
+    .nav-item:first-child {
+        border-top-left-radius: 2em 2em;
+        border-bottom-left-radius: 2em 2em;
+    }
+    .nav-item:last-child {
+        border-top-right-radius: 2em 2em;
+        border-bottom-right-radius: 2em 2em;
+    }
+}
